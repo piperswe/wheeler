@@ -8,7 +8,9 @@
     inputs.utils.follows = "flake-utils";
   };
   inputs.home-manager = {
-    url = github:nix-community/home-manager;
+    # home-manager evaluation in Hydra is currently broken
+    # see https://github.com/nix-community/home-manager/issues/2074#issuecomment-1230935057
+    url = github:nix-community/home-manager/0434f8e4cab4f200c9b4d3741a9e5d89705e6754;
     inputs.nixpkgs.follows = "nixpkgs";
     inputs.utils.follows = "flake-utils";
   };
