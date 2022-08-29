@@ -49,14 +49,23 @@
             update = rec {
               type = "app";
               drv = pkgs.writeShellScript "update.sh" ''
+                export PATH="${pkgs.lib.makeBinPath [ pkgs.nix ]}:$PATH"
                 exec nix flake update
+              '';
+              program = "${drv}";
+            };
+            build = rec {
+              type = "app";
+              drv = pkgs.writeShellScript "build.sh" ''
+                export PATH="${pkgs.lib.makeBinPath [ pkgs.nix pkgs.openssh ]}:$PATH"
+                exec nix build '.#nixosConfigurations.wheeler.config.system.build.toplevel'
               '';
               program = "${drv}";
             };
             deploy = rec {
               type = "app";
               drv = pkgs.writeShellScript "deploy.sh" ''
-                export PATH="${pkgs.lib.makeBinPath [ deploy-rs.packages.${system}.default ]}:$PATH"
+                export PATH="${pkgs.lib.makeBinPath [ pkgs.nix pkgs.openssh deploy-rs.packages.${system}.default ]}:$PATH"
                 exec deploy .
               '';
               program = "${drv}";
