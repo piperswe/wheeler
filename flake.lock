@@ -1,0 +1,165 @@
+{
+  "nodes": {
+    "cloudflared": {
+      "locked": {
+        "lastModified": 1661796865,
+        "narHash": "sha256-Cgp4oicPoPP2S5anEfAXTYuZX/totkClj367kfUknyw=",
+        "owner": "piperswe",
+        "repo": "nix-cloudflared",
+        "rev": "6e397f65b9fc817f38c65bb609cb544f8af4d2a0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "piperswe",
+        "repo": "nix-cloudflared",
+        "type": "github"
+      }
+    },
+    "deploy-rs": {
+      "inputs": {
+        "flake-compat": "flake-compat",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "utils": [
+          "flake-utils"
+        ]
+      },
+      "locked": {
+        "lastModified": 1659725433,
+        "narHash": "sha256-1ZxuK67TL29YLw88vQ18Y2Y6iYg8Jb7I6/HVzmNB6nM=",
+        "owner": "serokell",
+        "repo": "deploy-rs",
+        "rev": "41f15759dd8b638e7b4f299730d94d5aa46ab7eb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "serokell",
+        "repo": "deploy-rs",
+        "type": "github"
+      }
+    },
+    "flake-compat": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1648199409,
+        "narHash": "sha256-JwPKdC2PoVBkG6E+eWw3j6BMR6sL3COpYWfif7RVb8Y=",
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "rev": "64a525ee38886ab9028e6f61790de0832aa3ef03",
+        "type": "github"
+      },
+      "original": {
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "type": "github"
+      }
+    },
+    "flake-utils": {
+      "locked": {
+        "lastModified": 1659877975,
+        "narHash": "sha256-zllb8aq3YO3h8B/U0/J1WBgAL8EX5yWf5pMj3G0NAmc=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "c0e246b9b83f637f4681389ecabcb2681b4f3af0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "utils": [
+          "flake-utils"
+        ]
+      },
+      "locked": {
+        "lastModified": 1661573386,
+        "narHash": "sha256-pBEg8iY00Af/SAtU2dlmOAv+2x7kScaGlFRDjNoVJO8=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "d89bdff445eadff03fe414e9c30486bc8166b72b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1661628722,
+        "narHash": "sha256-oR/7NhG7pPkACToUtaaT6hH+rONE2z5/4NzjoUwEZt8=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "324c8aaf25b2f2027af7798e5582ce3040a793b6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-master": {
+      "locked": {
+        "lastModified": 1661805278,
+        "narHash": "sha256-fwBygt6Wbg3MKN27E67lgbB7A3Gnor4Q3V+RjgR/RcY=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "86d33a3b704d38c1102b1378dc546f7dd9496d52",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "master",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "piperswe-pubkeys": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1661802279,
+        "narHash": "sha256-GQmBVrnlF/PKAw+irbsOuC6eKmI1P1g+qQWMr3WFxBg=",
+        "owner": "piperswe",
+        "repo": "pubkeys",
+        "rev": "1d4ac946b77762940515104f69efa83f48ac4fda",
+        "type": "github"
+      },
+      "original": {
+        "owner": "piperswe",
+        "repo": "pubkeys",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "cloudflared": "cloudflared",
+        "deploy-rs": "deploy-rs",
+        "flake-utils": "flake-utils",
+        "home-manager": "home-manager",
+        "nixpkgs": "nixpkgs",
+        "nixpkgs-master": "nixpkgs-master",
+        "piperswe-pubkeys": "piperswe-pubkeys"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
