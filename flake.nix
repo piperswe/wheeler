@@ -47,6 +47,7 @@
         hydraJobs = {
           x86_64-linux = createChecks "x86_64-linux";
           wheeler = systemIndependent.nixosConfigurations.wheeler.config.system.build.toplevel;
+          helloWorld = nixpkgs.legacyPackages.x86_64-linux.writeText "helloWorld" "helloWorld";
         };
       };
       perSystem = flake-utils.lib.eachDefaultSystem (system:
