@@ -60,9 +60,6 @@
       trusted-users = [ "root" "pmc" ];
       access-tokens = "@/var/lib/nix/access-tokens";
     };
-    extraOptions = ''
-      !include /var/lib/nix/nix.conf
-    '';
   };
 
   programs.mtr.enable = true;
