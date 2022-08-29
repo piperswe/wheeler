@@ -43,16 +43,15 @@
       };
       hydraJobsAttr = {
         hydraJobs = {
-          x86_64-linux = createChecks "x86_64-linux";
           wheeler = systemIndependent.nixosConfigurations.wheeler.config.system.build.toplevel;
           helloWorld = nixpkgs.legacyPackages.x86_64-linux.writeText "helloWorld" "Hello, world! This is Wheeler.";
-        };
+        } // (flake-utils.lib.eachSystem [ "x86_64-linux" "i686-linux" ] createChecks);
       };
       perSystem = flake-utils.lib.eachDefaultSystem (system:
         let
           pkgs = nixpkgs.legacyPackages.${system};
         in
-        {
+        rec {
           apps = {
             update = rec {
               type = "app";
