@@ -26,6 +26,7 @@
         nodejs-16_x
         nixpkgs-fmt
         cloudflared
+        htop
       ];
 
       programs.neovim = {
