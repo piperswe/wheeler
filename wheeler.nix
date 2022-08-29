@@ -10,6 +10,7 @@
       piperswe-pubkeys.nixosModules.sshAuthorizedKeys
       ./hardware.nix
       ./users.nix
+      ./services/loki
       ./services/cloudflared.nix
       ./services/docker.nix
       ./services/grafana.nix
