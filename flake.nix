@@ -40,9 +40,6 @@
       perSystem = flake-utils.lib.eachDefaultSystem (system:
         let
           pkgs = nixpkgs.legacyPackages.${system};
-          checks = {
-            deploy-rs = deploy-rs.lib.${system}.deployChecks systemIndependent.deploy;
-          };
         in
         {
           apps = {
@@ -80,7 +77,9 @@
             };
           };
 
-          checks = flake-utils.lib.flattenTree checks;
+          checks = flake-utils.lib.flattenTree {
+            deploy-rs = deploy-rs.lib.${system}.deployChecks systemIndependent.deploy;
+          };
         }
       );
     in
