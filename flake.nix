@@ -18,6 +18,7 @@
     inputs.flake-utils.follows = "flake-utils";
   };
   inputs.cloudflared.url = github:piperswe/nix-cloudflared;
+  inputs.hydra.url = github:nixos/hydra;
 
   outputs = { self, deploy-rs, nixpkgs, flake-utils, ... }@attrs:
     let
@@ -35,6 +36,15 @@
             user = "root";
             path = deploy-rs.lib.x86_64-linux.activate.nixos nixosConfigurations.wheeler;
           };
+        };
+      };
+      createChecks = system: {
+        deploy-rs = deploy-rs.lib.${system}.deployChecks systemIndependent.deploy;
+      };
+      hydraJobsAttr = {
+        hydraJobs = {
+          x86_64-linux = createChecks "x86_64-linux";
+          wheeler = systemIndependent.nixosConfigurations.wheeler.config.system.build.toplevel;
         };
       };
       perSystem = flake-utils.lib.eachDefaultSystem (system:
@@ -77,11 +87,9 @@
             };
           };
 
-          checks = flake-utils.lib.flattenTree {
-            deploy-rs = deploy-rs.lib.${system}.deployChecks systemIndependent.deploy;
-          };
+          checks = flake-utils.lib.flattenTree (createChecks system);
         }
       );
     in
-    systemIndependent // perSystem;
+    systemIndependent // perSystem // hydraJobsAttr;
 }

@@ -13,6 +13,7 @@
       ./services/cloudflared.nix
       ./services/docker.nix
       ./services/grafana.nix
+      ./services/hydra.nix
       ./services/nginx.nix
       ./services/openssh.nix
       ./services/postgresql.nix
