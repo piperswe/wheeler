@@ -8,9 +8,7 @@
     inputs.utils.follows = "flake-utils";
   };
   inputs.home-manager = {
-    # home-manager evaluation in Hydra is currently broken
-    # see https://github.com/nix-community/home-manager/issues/2074#issuecomment-1230935057
-    url = github:nix-community/home-manager/0434f8e4cab4f200c9b4d3741a9e5d89705e6754;
+    url = github:nix-community/home-manager;
     inputs.nixpkgs.follows = "nixpkgs";
     inputs.utils.follows = "flake-utils";
   };
@@ -47,7 +45,7 @@
         hydraJobs = {
           x86_64-linux = createChecks "x86_64-linux";
           wheeler = systemIndependent.nixosConfigurations.wheeler.config.system.build.toplevel;
-          helloWorld = nixpkgs.legacyPackages.x86_64-linux.writeText "helloWorld" "helloWorld";
+          helloWorld = nixpkgs.legacyPackages.x86_64-linux.writeText "helloWorld" "Hello, world! This is Wheeler.";
         };
       };
       perSystem = flake-utils.lib.eachDefaultSystem (system:

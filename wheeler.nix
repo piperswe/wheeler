@@ -60,6 +60,7 @@
       ];
       trusted-users = [ "root" "pmc" ];
       access-tokens = "@/var/lib/nix/access-tokens";
+      allowed-uris = [ "http://" "https://" ];
     };
   };
 
