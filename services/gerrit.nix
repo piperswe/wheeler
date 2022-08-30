@@ -10,7 +10,7 @@
   };
   services.nginx.virtualHosts."gerrit.piperswe.me" = {
     locations."/" = {
-      proxyPass = "http://localhost:9226";
+      proxyPass = "http://localhost:8226";
       proxyWebsockets = true;
     };
   };

@@ -76,6 +76,7 @@
       trusted-users = [ "root" "pmc" ];
       access-tokens = "@/var/lib/nix/access-tokens";
       allowed-uris = [ "http://" "https://" ];
+      max-jobs = 24;
     };
     distributedBuilds = true;
     buildMachines = [
