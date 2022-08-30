@@ -27,6 +27,7 @@
         nixpkgs-fmt
         cloudflared
         htop
+        neofetch
       ];
 
       programs.neovim = {
