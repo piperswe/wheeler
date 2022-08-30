@@ -1,11 +1,10 @@
-{ hydra, ... }:
+{ ... }:
 let
   narCache = "/var/cache/hydra/nar-cache";
 in
 {
   services.hydra = {
     enable = true;
-    package = hydra.defaultPackage.x86_64-linux;
     hydraURL = "https://hydra.piperswe.me";
     notificationSender = "hydra@piperswe.me";
     port = 8225;
