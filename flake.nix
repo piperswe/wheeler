@@ -19,7 +19,7 @@
   };
   inputs.cloudflared.url = github:piperswe/nix-cloudflared;
   inputs.nix = {
-    url = github:nixos/nix;
+    url = github:nixos/nix/0f8754cd30ecbcfa49304d74853c3c0bbdd65d45;
     inputs.nixpkgs.follows = "nixpkgs";
   };
   inputs.hydra = {
