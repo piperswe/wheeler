@@ -2,6 +2,10 @@
 {
   services.nginx.virtualHosts."piperswe.me" = {
     root = "${computers-computers.packages.x86_64-linux.website}/share/computers-computers";
+    serverAliases = [
+      "piperswe.me"
+      "www.piperswe.me"
+    ];
     extraConfig = ''
       # Expire rules for static content
 
