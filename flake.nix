@@ -18,7 +18,15 @@
     inputs.flake-utils.follows = "flake-utils";
   };
   inputs.cloudflared.url = github:piperswe/nix-cloudflared;
-  inputs.hydra.url = github:nixos/hydra;
+  inputs.nix = {
+    url = github:nixos/nix;
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+  inputs.hydra = {
+    url = github:nixos/hydra;
+    inputs.nixpkgs.follows = "nixpkgs";
+    inputs.nix.follows = "nix";
+  };
 
   outputs = { self, deploy-rs, nixpkgs, flake-utils, ... }@attrs:
     let
