@@ -50,6 +50,19 @@
   nixpkgs.config.allowUnfree = true;
   hardware.enableAllFirmware = true;
 
+  programs.ssh.extraConfig = ''
+    Host eu.nixbuild.net
+      PubkeyAcceptedKeyTypes ssh-ed25519
+      IdentityFile /etc/nixbuild_id_ed25519
+  '';
+
+  programs.ssh.knownHosts = {
+    nixbuild = {
+      hostNames = [ "eu.nixbuild.net" ];
+      publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPIQCZc54poJ8vqawd8TraNryQeJnvH1eLpIDgbiqymM";
+    };
+  };
+
   nix = {
     settings = {
       auto-optimise-store = true;
@@ -64,6 +77,15 @@
       access-tokens = "@/var/lib/nix/access-tokens";
       allowed-uris = [ "http://" "https://" ];
     };
+    distributedBuilds = true;
+    buildMachines = [
+      {
+        hostName = "eu.nixbuild.net";
+        system = "x86_64-linux";
+        maxJobs = 250;
+        supportedFeatures = [ "benchmark" "big-parallel" ];
+      }
+    ];
   };
 
   programs.mtr.enable = true;
