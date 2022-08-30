@@ -21,7 +21,7 @@
       }
 
       # Media: images, icons, video, audio, HTC
-      location ~* \.(?:jpg|jpeg|gif|png|ico|cur|gz|svg|svgz|mp4|ogg|ogv|webm|htc)$ {
+      location ~* \.(?:jpg|jpeg|gif|png|ico|cur|gz|svg|svgz|mp4|ogg|ogv|webm|htc|woff|webp|avif)$ {
         expires 1y;
         add_header Cache-Control "public";
       }
