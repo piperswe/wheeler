@@ -81,6 +81,12 @@
     distributedBuilds = true;
     buildMachines = [
       {
+        hostName = "localhost";
+        systems = [ "x86_64-linux" "i386-linux" ];
+        maxJobs = 24;
+        supportedFeatures = [ "benchmark" "big-parallel" "kvm" "nixos-test" ];
+      }
+      {
         hostName = "eu.nixbuild.net";
         systems = [ "aarch64-linux" "armv7l-linux" ];
         maxJobs = 250;
