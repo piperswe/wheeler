@@ -12,6 +12,7 @@
       ./users.nix
       ./services/loki
       ./services/cloudflared.nix
+      ./services/computers-computers.nix
       ./services/docker.nix
       ./services/gerrit.nix
       ./services/grafana.nix

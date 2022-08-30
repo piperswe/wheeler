@@ -1,17 +1,43 @@
 {
   "nodes": {
     "cloudflared": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
       "locked": {
-        "lastModified": 1661796865,
-        "narHash": "sha256-Cgp4oicPoPP2S5anEfAXTYuZX/totkClj367kfUknyw=",
+        "lastModified": 1661827643,
+        "narHash": "sha256-PC1EB+EIFjhZy48/m6CwijoM053+j4geycPj1vKIAT0=",
         "owner": "piperswe",
         "repo": "nix-cloudflared",
-        "rev": "6e397f65b9fc817f38c65bb609cb544f8af4d2a0",
+        "rev": "246c9ed781345d15da4d71eac9710665d47aa9f5",
         "type": "github"
       },
       "original": {
         "owner": "piperswe",
         "repo": "nix-cloudflared",
+        "type": "github"
+      }
+    },
+    "computers-computers": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1661896879,
+        "narHash": "sha256-SamhdPSpAKxLPZpQRAT4M9TMp77dBwXVPTdjWa0KiVg=",
+        "owner": "piperswe",
+        "repo": "computers-computers",
+        "rev": "8f381e7fed7ffac5ef0304d2cabae82069a6c6a6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "piperswe",
+        "repo": "computers-computers",
         "type": "github"
       }
     },
@@ -80,11 +106,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1661573386,
-        "narHash": "sha256-pBEg8iY00Af/SAtU2dlmOAv+2x7kScaGlFRDjNoVJO8=",
+        "lastModified": 1661824092,
+        "narHash": "sha256-nSWLWytlXbeLrx5A+r5Pso7CvVrX5EgmIIXW/EXvPHQ=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "d89bdff445eadff03fe414e9c30486bc8166b72b",
+        "rev": "5bd66dc6cd967033489c69d486402b75d338eeb6",
         "type": "github"
       },
       "original": {
@@ -95,32 +121,46 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1661628722,
-        "narHash": "sha256-oR/7NhG7pPkACToUtaaT6hH+rONE2z5/4NzjoUwEZt8=",
-        "owner": "nixos",
+        "lastModified": 1661353537,
+        "narHash": "sha256-1E2IGPajOsrkR49mM5h55OtYnU0dGyre6gl60NXKITE=",
+        "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "324c8aaf25b2f2027af7798e5582ce3040a793b6",
+        "rev": "0e304ff0d9db453a4b230e9386418fd974d5804a",
         "type": "github"
       },
       "original": {
-        "owner": "nixos",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
+        "id": "nixpkgs",
+        "type": "indirect"
       }
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1661818354,
-        "narHash": "sha256-VwmN70RHY0ZawdJnu1qkoTdB5AL6tXq7hHYnzCyMg10=",
+        "lastModified": 1661896648,
+        "narHash": "sha256-IC6wIOK+nlqLHlENvJev4RnUQ29fkbFh5lACnf9f8A8=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "60737ae4ce7795ef7f3e2e268381f3ccc0b64ec5",
+        "rev": "3941f7330be127e5f526ff7de920c2beb0320729",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
         "ref": "master",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1661720780,
+        "narHash": "sha256-AJNGyaB2eKZAYaPNjBZOzap87yL+F9ZLaFzzMkvega0=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "a63021a330d8d33d862a8e29924b42d73037dd37",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -135,11 +175,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1661802279,
-        "narHash": "sha256-GQmBVrnlF/PKAw+irbsOuC6eKmI1P1g+qQWMr3WFxBg=",
+        "lastModified": 1661827896,
+        "narHash": "sha256-TGXjZYdiUcge6/B0v9KNWo0lQdRIjeEfN4Oflxe9l0w=",
         "owner": "piperswe",
         "repo": "pubkeys",
-        "rev": "1d4ac946b77762940515104f69efa83f48ac4fda",
+        "rev": "8a49a99b92329ef5c57163a3fef28097e5eedaa7",
         "type": "github"
       },
       "original": {
@@ -151,10 +191,11 @@
     "root": {
       "inputs": {
         "cloudflared": "cloudflared",
+        "computers-computers": "computers-computers",
         "deploy-rs": "deploy-rs",
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs",
+        "nixpkgs": "nixpkgs_2",
         "nixpkgs-master": "nixpkgs-master",
         "piperswe-pubkeys": "piperswe-pubkeys"
       }

@@ -18,6 +18,11 @@
     inputs.flake-utils.follows = "flake-utils";
   };
   inputs.cloudflared.url = github:piperswe/nix-cloudflared;
+  inputs.computers-computers = {
+    url = github:piperswe/computers-computers;
+    inputs.nixpkgs.follows = "nixpkgs";
+    inputs.flake-utils.follows = "flake-utils";
+  };
 
   outputs = { self, deploy-rs, nixpkgs, flake-utils, ... }@attrs:
     let
