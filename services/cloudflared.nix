@@ -8,4 +8,5 @@ in
     enable = true;
     package = pkgsMaster.cloudflared;
   };
+  boot.kernel.sysctl."net.core.rmem_max" = 2500000;
 }
