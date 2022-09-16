@@ -83,7 +83,7 @@
     buildMachines = [
       {
         hostName = "localhost";
-        systems = [ "x86_64-linux" "i386-linux" ];
+        systems = [ "x86_64-linux" "i686-linux" ];
         maxJobs = 24;
         supportedFeatures = [ "benchmark" "big-parallel" "kvm" "nixos-test" ];
       }
