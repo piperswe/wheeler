@@ -25,6 +25,7 @@
       ./services/vaultwarden.nix
       ./services/xrdp.nix
       ./services/xserver.nix
+      ./services/yggdrasil.nix
     ];
 
   # Bootloader.
