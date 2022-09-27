@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, home-manager, piperswe-pubkeys, ... }:
+{ config, pkgs, nixpkgs, home-manager, piperswe-pubkeys, ... }:
 {
   imports =
     [
@@ -17,8 +17,10 @@
       ./services/gerrit.nix
       ./services/grafana.nix
       ./services/hydra.nix
+      ./services/mastodon.nix
       ./services/nginx.nix
       ./services/openssh.nix
+      ./services/postfix.nix
       ./services/postgresql.nix
       ./services/prometheus.nix
       ./services/rsyslogd.nix

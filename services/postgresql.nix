@@ -25,6 +25,7 @@
       users root hydra
       users postgres postgres
       users vaultwarden vaultwarden
+      users mastodon mastodon
       users pmc pmc
     '';
   };

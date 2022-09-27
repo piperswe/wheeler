@@ -24,12 +24,14 @@
     inputs.flake-utils.follows = "flake-utils";
   };
 
-  outputs = { self, deploy-rs, nixpkgs, flake-utils, ... }@attrs:
+  outputs = { self, deploy-rs, nixpkgs, nixpkgs-master, flake-utils, ... }@attrs:
     let
       systemIndependent = rec {
         nixosConfigurations.wheeler = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          specialArgs = attrs;
+          specialArgs = attrs // {
+            pkgsMaster = nixpkgs-master.legacyPackages.x86_64-linux;
+          };
           modules = [ ./wheeler.nix ];
         };
 

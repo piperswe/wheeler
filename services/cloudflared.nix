@@ -1,7 +1,4 @@
-{ nixpkgs-master, cloudflared, ... }:
-let
-  pkgsMaster = nixpkgs-master.legacyPackages.x86_64-linux;
-in
+{ pkgsMaster, cloudflared, ... }:
 {
   imports = [ cloudflared.nixosModules.cloudflared ];
   services.cloudflared = {
