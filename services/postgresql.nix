@@ -17,16 +17,18 @@
       CREATE DATABASE vaultwarden OWNER vaultwarden;
 
       -- Hydra creates its own database
+
+      CREATE USER "matrix-synapse";
+      CREATE DATABASE "matrix-synapse" OWNER "matrix-synapse"
+        TEMPLATE template0
+        LC_COLLATE = "C"
+        LC_CTYPE = "C";
     '';
     identMap = ''
-      users hydra hydra
       users hydra-queue-runner hydra
       users hydra-www hydra
       users root hydra
-      users postgres postgres
-      users vaultwarden vaultwarden
-      users mastodon mastodon
-      users pmc pmc
+      users /^(.*)$ \1
     '';
   };
   services.prometheus.exporters.postgres = {
