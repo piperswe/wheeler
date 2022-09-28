@@ -36,7 +36,7 @@ in
       email = {
         smtp_host = "127.0.0.1";
         smtp_port = 25;
-        notif_from = "chat@piperswe.me";
+        notif_from = "noreply@piperswe.me";
       };
       experimental_features.msc3030_enabled = true;
       suppress_key_server_warning = true;

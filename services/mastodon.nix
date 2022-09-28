@@ -5,7 +5,8 @@
     package = pkgsMaster.mastodon;
     localDomain = "piperswe.me";
     extraConfig.WEB_DOMAIN = "social.piperswe.me";
-    smtp.fromAddress = "social@piperswe.me";
+    smtp.fromAddress = "noreply@piperswe.me";
+    trustedProxy = "::1";
   };
 
   services.nginx.virtualHosts."social.piperswe.me" = {

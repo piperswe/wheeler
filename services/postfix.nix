@@ -10,6 +10,11 @@
       smtp_sasl_security_options = noanonymous
       smtp_use_tls = yes
       masquerade_domains = piperswe.me
+      canonical_maps = regexp:/etc/postfix/canonical
+      canonical_classes = envelope_sender,header_sender
+    '';
+    canonical = ''
+      // noreply@piperswe.me
     '';
   };
 }

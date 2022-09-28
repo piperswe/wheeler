@@ -6,7 +6,7 @@ in
   services.hydra = {
     enable = true;
     hydraURL = "https://hydra.piperswe.me";
-    notificationSender = "hydra@piperswe.me";
+    notificationSender = "noreply@piperswe.me";
     port = 8225;
     extraConfig = ''
       store_uri = s3://nix-cache?secret-key=/var/lib/hydra/queue-runner/keys/nix-cache.piperswe.me/secret&write-nar-listing=1&ls-compression=br&log-compression=br&compression=br&parallel-compression=1&endpoint=https://1c495e64ff5fd527342d7b7bf6731a1f.r2.cloudflarestorage.com
