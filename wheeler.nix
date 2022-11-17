@@ -85,12 +85,14 @@
   nix = {
     settings = {
       auto-optimise-store = true;
-      extra-experimental-features = [ "nix-command" "flakes" ];
+      extra-experimental-features = [ "nix-command" "flakes" "ca-derivations" ];
       extra-substituters = [
         "https://nix-cache.piperswe.me"
+        "https://cache.ngi0.nixos.org"
       ];
       extra-trusted-public-keys = [
         "nix-cache.piperswe.me:4r7vyJJ/0riN8ILB+YhSCnYeynvxOeZXNsPNV4Fn8mE="
+        "cache.ngi0.nixos.org-1:KqH5CBLNSyX184S9BKZJo1LxrxJ9ltnY2uAs5c/f1MA="
       ];
       trusted-users = [ "root" "pmc" ];
       access-tokens = "@/var/lib/nix/access-tokens";
