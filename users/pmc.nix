@@ -38,6 +38,12 @@
         ];
       };
 
+      programs.git = {
+        enable = true;
+        userName = "Piper McCorkle";
+        userEmail = "contact@piperswe.me";
+      };
+
       home.stateVersion = "22.05";
     };
 }
