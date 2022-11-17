@@ -35,7 +35,9 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  boot.supportedFilesystems = [ "zfs" ];
 
+  networking.hostId = "273c42cb";
   networking.hostName = "wheeler";
   networking.nameservers = [ "1.1.1.1" "1.0.0.1" ];
   networking.dhcpcd.extraConfig = "nohook resolv.conf";
