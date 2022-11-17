@@ -37,6 +37,8 @@
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
   boot.supportedFilesystems = [ "zfs" ];
 
+  services.zfs.autoScrub.enable = true;
+
   networking.hostId = "273c42cb";
   networking.hostName = "wheeler";
   networking.nameservers = [ "1.1.1.1" "1.0.0.1" ];
