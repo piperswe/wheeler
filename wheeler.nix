@@ -44,7 +44,15 @@
   networking.nameservers = [ "1.1.1.1" "1.0.0.1" ];
   networking.dhcpcd.extraConfig = "nohook resolv.conf";
 
-  system.autoUpgrade.flake = github:piperswe/wheeler;
+  system.autoUpgrade = {
+    enable = true;
+    flake = github:piperswe/wheeler;
+    allowReboot = true;
+    rebootWindow = {
+      lower = "01:00";
+      upper = "08:00";
+    };
+  };
 
   time.timeZone = "America/Chicago";
 
