@@ -44,6 +44,8 @@
   networking.nameservers = [ "1.1.1.1" "1.0.0.1" ];
   networking.dhcpcd.extraConfig = "nohook resolv.conf";
 
+  system.autoUpgrade.flake = github:piperswe/wheeler;
+
   time.timeZone = "America/Chicago";
 
   i18n.defaultLocale = "en_US.utf8";
