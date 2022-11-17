@@ -135,32 +135,16 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1668709110,
-        "narHash": "sha256-+zO+avCk2aZE6d+sI4LNMJ4qQuKs6jL/Xo/0rg85+Gk=",
+        "lastModified": 1668711950,
+        "narHash": "sha256-BVucsPmZLQI5N7iCc42wXtYlAJEYjOSRIh81xruZJr0=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "e2c91016fef1aae1c21a285c98f29a3d9dd103cd",
+        "rev": "af447367ec02414cf16ef95054545a7854b34f00",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
         "ref": "master",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs-temp-with-mastodon": {
-      "locked": {
-        "lastModified": 1668709947,
-        "narHash": "sha256-JL9uTPl9hmgCSQ+hzs4OcQbpuoROsDB0DaK7OvByl9Y=",
-        "owner": "erictapen",
-        "repo": "nixpkgs",
-        "rev": "0fb9f4d00c4cd2da4cdc07758873d0b2392d0b9f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "erictapen",
-        "ref": "mastodon",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -213,7 +197,6 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-master": "nixpkgs-master",
-        "nixpkgs-temp-with-mastodon": "nixpkgs-temp-with-mastodon",
         "piperswe-pubkeys": "piperswe-pubkeys"
       }
     }

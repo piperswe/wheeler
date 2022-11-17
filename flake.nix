@@ -1,7 +1,6 @@
 {
   inputs.nixpkgs.url = github:nixos/nixpkgs/nixos-unstable;
   inputs.nixpkgs-master.url = github:nixos/nixpkgs/master;
-  inputs.nixpkgs-temp-with-mastodon.url = github:erictapen/nixpkgs/mastodon;
   inputs.flake-utils.url = github:numtide/flake-utils;
   inputs.deploy-rs = {
     url = github:serokell/deploy-rs;
@@ -25,14 +24,13 @@
     inputs.flake-utils.follows = "flake-utils";
   };
 
-  outputs = { self, deploy-rs, nixpkgs, nixpkgs-master, nixpkgs-temp-with-mastodon, flake-utils, ... }@attrs:
+  outputs = { self, deploy-rs, nixpkgs, nixpkgs-master, flake-utils, ... }@attrs:
     let
       systemIndependent = rec {
         nixosConfigurations.wheeler = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = attrs // {
             pkgsMaster = nixpkgs-master.legacyPackages.x86_64-linux;
-            pkgsTempWithMastodon = nixpkgs-temp-with-mastodon.legacyPackages.x86_64-linux;
           };
           modules = [ ./wheeler.nix ];
         };
