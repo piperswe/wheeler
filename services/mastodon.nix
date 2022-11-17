@@ -1,8 +1,8 @@
-{ pkgs, pkgsMaster, config, ... }:
+{ pkgs, pkgsMaster, pkgsTempWithMastodon, config, ... }:
 {
   services.mastodon = {
     enable = true;
-    package = pkgsMaster.mastodon;
+    package = pkgsTempWithMastodon.mastodon;
     localDomain = "piperswe.me";
     extraConfig.WEB_DOMAIN = "social.piperswe.me";
     smtp.fromAddress = "noreply@piperswe.me";
