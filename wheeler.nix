@@ -69,6 +69,9 @@
   nixpkgs.config.allowUnfree = true;
   hardware.enableAllFirmware = true;
 
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.opengl.enable = true;
+
   programs.ssh.extraConfig = ''
     Host eu.nixbuild.net
       PubkeyAcceptedKeyTypes ssh-ed25519
