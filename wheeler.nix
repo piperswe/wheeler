@@ -11,6 +11,7 @@
       ./hardware.nix
       ./users.nix
       ./services/loki
+      ./services/avahi.nix
       ./services/cloudflared.nix
       ./services/computers-computers.nix
       ./services/docker.nix
