@@ -26,6 +26,7 @@
       ./services/postgresql.nix
       ./services/prometheus.nix
       ./services/rsyslogd.nix
+      ./services/samba.nix
       ./services/synapse.nix
       ./services/vaultwarden.nix
       ./services/xrdp.nix
