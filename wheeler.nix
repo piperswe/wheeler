@@ -19,7 +19,6 @@
       ./services/grafana.nix
       ./services/hydra.nix
       ./services/mastodon.nix
-      ./services/netatalk.nix
       ./services/nginx.nix
       ./services/openssh.nix
       ./services/postfix.nix

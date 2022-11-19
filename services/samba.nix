@@ -19,6 +19,7 @@
       security = user 
       use sendfile = yes
       #max protocol = smb2
+      min protocol = SMB3
       # note: localhost is the ipv6 localhost ::1
       hosts allow = 192.168.0.0/16 127.0.0.0/8 ::1
       hosts deny = 0.0.0.0/0
@@ -35,6 +36,21 @@
         "directory mask" = "0755";
         "force user" = "pmc";
         "force group" = "users";
+        "valid users" = "pmc";
+      };
+      time-machine-pmc = {
+        path = "/var/lib/time-machine/pmc";
+        browseable = "yes";
+        "read only" = "no";
+        "guest ok" = "no";
+        "create mask" = "0644";
+        "directory mask" = "0755";
+        "force user" = "pmc";
+        "force group" = "users";
+        "valid users" = "pmc";
+        "fruit:aapl" = "yes";
+        "fruit:time machine" = "yes";
+        "vfs objects" = "catia fruit streams_xattr";
       };
     };
   };
