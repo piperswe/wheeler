@@ -54,9 +54,17 @@
             "mbsync"
             "replaygain"
             "mbsubmit"
+            "convert"
+            "fromfilename"
+            "inline"
           ];
           library = "/data/music/library.db";
           directory = "/data/music/library";
+          import = {
+            from_scratch = true;
+            detail = true;
+            bell = true;
+          };
           match.preferred = {
             countries = [ "US" ];
             original_year = true;
@@ -71,6 +79,23 @@
               "coverart"
             ];
             high_resolution = true;
+            cautious = true;
+            deinterlace = true;
+          };
+          convert = {
+            dest = "/data/music/portable_library";
+            album_art_maxwidth = 600;
+            copy_album_art = true;
+            format = "opus";
+            formats.opus = ''
+              bash -c 'mkdir -p "$(dirname "$dest")" && ${pkgs.ffmpeg_5-full}/bin/ffmpeg -i "$source" -f wav - | ${pkgs.opusTools}/bin/opusenc --bitrate 96 - "$dest"'
+            '';
+          };
+          item_fields.disc_and_track = "u'%02i.%02i' % (disc, track) if disctotal > 1 else u'%02i' % (track)";
+          paths = {
+            default = "$albumartist/$album%aunique{albumartist album albumdisambig,albumtype year albumdisambig country label}%if{$albumdisambig, [%title{$albumdisambig}]}/$disc_and_track $title";
+            singleton = "$albumartist/[non album tracks]/$title";
+            comp = "Various Artists/$album%aunique{albumartist album albumdisambig,albumtype year albumdisambig country label}%if{$albumdisambig, [%title{$albumdisambig}]}/$disc_and_track $artist - $title";
           };
         };
       };
