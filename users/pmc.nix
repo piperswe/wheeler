@@ -3,7 +3,7 @@
   users.users.pmc = {
     isNormalUser = true;
     description = "Piper McCorkle";
-    extraGroups = [ "networkmanager" "wheel" "docker" "music" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "music-library" "video-library" ];
     shell = pkgs.fish;
   };
   piperswe-pubkeys = {
