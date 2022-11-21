@@ -3,7 +3,7 @@
   users.users.pmc = {
     isNormalUser = true;
     description = "Piper McCorkle";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "music" ];
     shell = pkgs.fish;
   };
   piperswe-pubkeys = {
@@ -42,6 +42,37 @@
         enable = true;
         userName = "Piper McCorkle";
         userEmail = "contact@piperswe.me";
+      };
+
+      programs.beets = {
+        enable = true;
+        settings = {
+          plugins = [
+            "chroma"
+            "embedart"
+            "fetchart"
+            "mbsync"
+            "replaygain"
+            "mbsubmit"
+          ];
+          library = "/data/music/library.db";
+          directory = "/data/music/library";
+          match.preferred = {
+            countries = [ "US" ];
+            original_year = true;
+          };
+          embedart = {
+            maxwidth = 1024;
+            quality = 75;
+          };
+          fetchart = {
+            sources = [
+              "filesystem"
+              "coverart"
+            ];
+            high_resolution = true;
+          };
+        };
       };
 
       home.stateVersion = "22.05";
