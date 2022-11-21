@@ -21,6 +21,7 @@
       ./services/mastodon.nix
       ./services/nginx.nix
       ./services/openssh.nix
+      ./services/plex.nix
       ./services/postfix.nix
       ./services/postgresql.nix
       ./services/prometheus.nix
