@@ -3,7 +3,7 @@
   users.users.pmc = {
     isNormalUser = true;
     description = "Piper McCorkle";
-    extraGroups = [ "networkmanager" "wheel" "docker" "music-library" "video-library" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "music-library" "video-library" "mastodon" ];
     shell = pkgs.fish;
   };
   piperswe-pubkeys = {
@@ -29,6 +29,7 @@
         htop
         neofetch
         docker-compose
+        awscli2
       ];
 
       programs.neovim = {

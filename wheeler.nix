@@ -18,7 +18,7 @@
       ./services/gerrit.nix
       ./services/grafana.nix
       ./services/hydra.nix
-      ./services/mastodon.nix
+      ./services/mastodon
       ./services/nginx.nix
       ./services/openssh.nix
       ./services/plex.nix

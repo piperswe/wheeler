@@ -1,18 +1,33 @@
 { pkgs, pkgsMaster, config, ... }:
 {
-  services.mastodon = {
+  imports = [ ./module.nix ];
+
+  services.custom-mastodon = {
     enable = true;
     package = pkgsMaster.mastodon;
     localDomain = "piperswe.me";
-    extraConfig.WEB_DOMAIN = "social.piperswe.me";
+    extraConfig = {
+      WEB_DOMAIN = "social.piperswe.me";
+      S3_ENABLED = "true";
+      S3_BUCKET = "mastodon";
+      S3_HOSTNAME = "1c495e64ff5fd527342d7b7bf6731a1f.r2.cloudflarestorage.com";
+      S3_ENDPOINT = "https://1c495e64ff5fd527342d7b7bf6731a1f.r2.cloudflarestorage.com";
+      S3_PROTOCOL = "https";
+      S3_ALIAS_HOST = "social-assets.piperswe.me";
+      S3_PERMISSION = "private";
+    };
     smtp.fromAddress = "noreply@piperswe.me";
     trustedProxy = "::1";
   };
 
   services.nginx.virtualHosts."social.piperswe.me" = {
-    root = "${config.services.mastodon.package}/public/";
+    root = "${config.services.custom-mastodon.package}/public/";
 
-    locations."/system/".alias = "/var/lib/mastodon/public-system/";
+    locations."/system" = {
+      extraConfig = ''
+        rewrite ^/system(.*) https://social-assets.piperswe.me$1 permanent;
+      '';
+    };
 
     locations."/" = {
       tryFiles = "$uri @proxy";
@@ -48,5 +63,5 @@
     };
   };
 
-  users.groups.${config.services.mastodon.group}.members = [ config.services.nginx.user ];
+  users.groups.${config.services.custom-mastodon.group}.members = [ config.services.nginx.user ];
 }
