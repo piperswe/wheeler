@@ -1,10 +1,16 @@
-{ pkgs, pkgsMaster, config, ... }:
+{ pkgs, pkgsMaster, config, glitch-soc, glitch-soc-rev, ... }:
 {
   imports = [ ./module.nix ];
 
   services.custom-mastodon = {
     enable = true;
-    package = pkgsMaster.mastodon;
+    package = pkgsMaster.callPackage ./glitch-soc.nix {
+      pname = "glitch-soc";
+      version = "4.0.2+git.${glitch-soc-rev}";
+      srcOverride = glitch-soc;
+      yarnSha256Override = "sha256-bSpBJBOIRsSwQioT4Ha5jPV0mEPmlUv5HZ/tV5oLenk=";
+      dependenciesDir = ./.;
+    };
     localDomain = "piperswe.me";
     extraConfig = {
       WEB_DOMAIN = "social.piperswe.me";

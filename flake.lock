@@ -96,6 +96,22 @@
         "type": "github"
       }
     },
+    "glitch-soc": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1669112774,
+        "narHash": "sha256-wMkQmRCK6g92EgfQ9K8XEzp6B5PseLvjeMHYZ/aSroY=",
+        "owner": "glitch-soc",
+        "repo": "mastodon",
+        "rev": "43dbc6256854a9832c7255fc62a8fa8df7244dd6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "glitch-soc",
+        "repo": "mastodon",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -194,6 +210,7 @@
         "computers-computers": "computers-computers",
         "deploy-rs": "deploy-rs",
         "flake-utils": "flake-utils",
+        "glitch-soc": "glitch-soc",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-master": "nixpkgs-master",
