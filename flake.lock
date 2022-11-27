@@ -99,11 +99,11 @@
     "glitch-soc": {
       "flake": false,
       "locked": {
-        "lastModified": 1669112774,
-        "narHash": "sha256-wMkQmRCK6g92EgfQ9K8XEzp6B5PseLvjeMHYZ/aSroY=",
+        "lastModified": 1669380883,
+        "narHash": "sha256-HQkwwiiyNVXmVWqLnQHJU7BA/WiOdGweuYjBbOdS/b8=",
         "owner": "glitch-soc",
         "repo": "mastodon",
-        "rev": "43dbc6256854a9832c7255fc62a8fa8df7244dd6",
+        "rev": "6517b7b9f02f8590a8f9c5aa04e3ef9efeb4e757",
         "type": "github"
       },
       "original": {
@@ -122,11 +122,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1669071065,
-        "narHash": "sha256-KBpgj3JkvlPsJ3duOZqFJe6tgr+wc75t8sFmgRbBSbw=",
+        "lastModified": 1669573161,
+        "narHash": "sha256-UAOXq+LIX+goAAY2MiC0+zCxdNPaO7NAPTvCQExpIBs=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "f7641a3ff398ccce952e19a199d775934e518c1d",
+        "rev": "50c9bccb6abc52811a59db620606e016fcde32bd",
         "type": "github"
       },
       "original": {
@@ -151,11 +151,11 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1669093249,
-        "narHash": "sha256-yriEUCTPMKg7XCivQo0elebZOQer/YCkvLbQ78TjQOk=",
+        "lastModified": 1669586101,
+        "narHash": "sha256-gMyYpedcUXcWlbsMmL1AHVto7ngBmGic+GLzF9ITHV4=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "2ea79e0fe445f3fe4f7ac355e12b60ca0e2bd1fa",
+        "rev": "1ffa33bf09d4ef9cf45ae2cc8de6669a497c38ff",
         "type": "github"
       },
       "original": {
@@ -167,11 +167,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1668994630,
-        "narHash": "sha256-1lqx6HLyw6fMNX/hXrrETG1vMvZRGm2XVC9O/Jt0T6c=",
+        "lastModified": 1669411043,
+        "narHash": "sha256-LfPd3+EY+jaIHTRIEOUtHXuanxm59YKgUacmSzaqMLc=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "af50806f7c6ab40df3e6b239099e8f8385f6c78b",
+        "rev": "5dc7114b7b256d217fe7752f1614be2514e61bb8",
         "type": "github"
       },
       "original": {
@@ -191,11 +191,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1661827896,
-        "narHash": "sha256-TGXjZYdiUcge6/B0v9KNWo0lQdRIjeEfN4Oflxe9l0w=",
+        "lastModified": 1669457290,
+        "narHash": "sha256-ttBb9pnVwA9tNxJB/ZP3aT5XEMaoWr5ETdlyjJOniYg=",
         "owner": "piperswe",
         "repo": "pubkeys",
-        "rev": "8a49a99b92329ef5c57163a3fef28097e5eedaa7",
+        "rev": "9207c2b5267a7736b5268158c09f511fac6bf0a2",
         "type": "github"
       },
       "original": {
