@@ -49,6 +49,17 @@
       mail.recipient = "contact@piperswe.me";
     };
   };
+  services.sanoid = {
+    enable = true;
+    datasets."tank/media" = {
+      autosnap = true;
+      recursive = true;
+      yearly = 5;
+      monthly = 12;
+      daily = 30;
+      hourly = 24;
+    };
+  };
 
   networking.hostId = "273c42cb";
   networking.hostName = "wheeler";
