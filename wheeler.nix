@@ -41,6 +41,14 @@
   boot.supportedFilesystems = [ "zfs" ];
 
   services.zfs.autoScrub.enable = true;
+  services.smartd = {
+    enable = true;
+    notifications = {
+      test = true;
+      mail.enable = true;
+      mail.recipient = "contact@piperswe.me";
+    };
+  };
 
   networking.hostId = "273c42cb";
   networking.hostName = "wheeler";
