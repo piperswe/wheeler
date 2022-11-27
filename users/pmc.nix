@@ -30,6 +30,7 @@
         neofetch
         docker-compose
         awscli2
+        iotop
       ];
 
       programs.neovim = {

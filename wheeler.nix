@@ -40,6 +40,10 @@
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
   boot.supportedFilesystems = [ "zfs" ];
 
+  boot.kernel.sysctl = {
+    "kernel.task_delayacct" = 1;
+  };
+
   services.zfs.autoScrub.enable = true;
   services.smartd = {
     enable = true;
