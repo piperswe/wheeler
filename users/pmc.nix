@@ -31,6 +31,7 @@
         docker-compose
         awscli2
         iotop
+        screen
       ];
 
       programs.neovim = {
