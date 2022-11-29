@@ -99,11 +99,11 @@
     "glitch-soc": {
       "flake": false,
       "locked": {
-        "lastModified": 1669380883,
-        "narHash": "sha256-HQkwwiiyNVXmVWqLnQHJU7BA/WiOdGweuYjBbOdS/b8=",
+        "lastModified": 1669641420,
+        "narHash": "sha256-USwt2USL6+HoUcuJi3LqTC6Nk7d4WQdwuq4NoGopfGw=",
         "owner": "glitch-soc",
         "repo": "mastodon",
-        "rev": "6517b7b9f02f8590a8f9c5aa04e3ef9efeb4e757",
+        "rev": "1a7aa37b60769a10077c585fa76ec848b6866d9a",
         "type": "github"
       },
       "original": {
@@ -151,11 +151,11 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1669586101,
-        "narHash": "sha256-gMyYpedcUXcWlbsMmL1AHVto7ngBmGic+GLzF9ITHV4=",
+        "lastModified": 1669695967,
+        "narHash": "sha256-nK1aGo1E5Mk7YiikMeKHFaxwaQ5+Vvvx5rjMmbpkrrA=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "1ffa33bf09d4ef9cf45ae2cc8de6669a497c38ff",
+        "rev": "c9fe0f83fa55ba55ac6a8d939a035c6e4ad85d1f",
         "type": "github"
       },
       "original": {
@@ -167,11 +167,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1669411043,
-        "narHash": "sha256-LfPd3+EY+jaIHTRIEOUtHXuanxm59YKgUacmSzaqMLc=",
+        "lastModified": 1669542132,
+        "narHash": "sha256-DRlg++NJAwPh8io3ExBJdNW7Djs3plVI5jgYQ+iXAZQ=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "5dc7114b7b256d217fe7752f1614be2514e61bb8",
+        "rev": "a115bb9bd56831941be3776c8a94005867f316a7",
         "type": "github"
       },
       "original": {

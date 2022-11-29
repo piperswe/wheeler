@@ -39,6 +39,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
   boot.supportedFilesystems = [ "zfs" ];
+  boot.zfs.extraPools = [ "tank" ];
 
   boot.kernel.sysctl = {
     "kernel.task_delayacct" = 1;
@@ -55,7 +56,7 @@
   };
   services.sanoid = {
     enable = true;
-    datasets."tank/media" = {
+    datasets."tank" = {
       autosnap = true;
       recursive = true;
       yearly = 5;

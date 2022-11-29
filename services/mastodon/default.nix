@@ -23,6 +23,7 @@
       S3_PERMISSION = "private";
     };
     smtp.fromAddress = "noreply@piperswe.me";
+    database.createLocally = true;
     trustedProxy = "::1";
   };
 
