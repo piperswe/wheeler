@@ -47,6 +47,10 @@
       max_parallel_workers_per_gather = "2";
       max_parallel_workers = "4";
       max_parallel_maintenance_workers = "2";
+      shared_preload_libraries = "pg_stat_statements";
+      "pg_stat_statements.track" = "all";
+      "pg_stat_statements.max" = "10000";
+      track_activity_query_size = "2048";
     };
   };
   services.prometheus.exporters.postgres = {
