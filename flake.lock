@@ -96,21 +96,33 @@
         "type": "github"
       }
     },
-    "glitch-soc": {
-      "flake": false,
+    "flake-utils_2": {
       "locked": {
-        "lastModified": 1669380883,
-        "narHash": "sha256-HQkwwiiyNVXmVWqLnQHJU7BA/WiOdGweuYjBbOdS/b8=",
-        "owner": "glitch-soc",
-        "repo": "mastodon",
-        "rev": "6517b7b9f02f8590a8f9c5aa04e3ef9efeb4e757",
+        "lastModified": 1667395993,
+        "narHash": "sha256-nuEHfE/LcWyuSWnS8t12N1wc105Qtau+/OdUAjtQ0rA=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "5aed5285a952e0b949eb3ba02c12fa4fcfef535f",
         "type": "github"
       },
       "original": {
-        "owner": "glitch-soc",
-        "repo": "mastodon",
-        "rev": "6517b7b9f02f8590a8f9c5aa04e3ef9efeb4e757",
-        "type": "github"
+        "id": "flake-utils",
+        "type": "indirect"
+      }
+    },
+    "glitch-soc": {
+      "inputs": {
+        "flake-utils": "flake-utils_2",
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "narHash": "sha256-Y7sm+BDjuy4S9t/B0l5ZZdBJa+Btsw0N3fp0avG2s6I=",
+        "type": "tarball",
+        "url": "https://github.com/piperswe/glitch-soc/archive/refs/heads/add-nix.zip"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://github.com/piperswe/glitch-soc/archive/refs/heads/add-nix.zip"
       }
     },
     "home-manager": {
@@ -168,6 +180,20 @@
     },
     "nixpkgs_2": {
       "locked": {
+        "lastModified": 1669597967,
+        "narHash": "sha256-R+2NaDkXsYkOpFOhmVR8jBZ77Pq55Z6ilaqwFLLn000=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "be9e3762e719211368d186f547f847737baad720",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
         "lastModified": 1669542132,
         "narHash": "sha256-DRlg++NJAwPh8io3ExBJdNW7Djs3plVI5jgYQ+iXAZQ=",
         "owner": "nixos",
@@ -180,6 +206,20 @@
         "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
+      }
+    },
+    "nixpkgs_4": {
+      "locked": {
+        "lastModified": 1655361562,
+        "narHash": "sha256-chPaIIhmdL6jdZWpf/K6yQCsuBNOYuMqbJsNpLfrdTE=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "0b59d075675dc28bf9ebab466033280096c8d4fe",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
       }
     },
     "piperswe-pubkeys": {
@@ -213,9 +253,28 @@
         "flake-utils": "flake-utils",
         "glitch-soc": "glitch-soc",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": "nixpkgs_3",
         "nixpkgs-master": "nixpkgs-master",
-        "piperswe-pubkeys": "piperswe-pubkeys"
+        "piperswe-pubkeys": "piperswe-pubkeys",
+        "vscode-server": "vscode-server"
+      }
+    },
+    "vscode-server": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_4"
+      },
+      "locked": {
+        "lastModified": 1662442857,
+        "narHash": "sha256-e2ex4mO4q6UBoJvPSRdYBX1vIvpulqs6SNxvdSsL6uE=",
+        "owner": "msteen",
+        "repo": "nixos-vscode-server",
+        "rev": "c54b714db58ad05d064f394d6603751ee6bd04f6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "msteen",
+        "repo": "nixos-vscode-server",
+        "type": "github"
       }
     }
   },

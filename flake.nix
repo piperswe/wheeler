@@ -23,19 +23,16 @@
     inputs.nixpkgs.follows = "nixpkgs";
     inputs.flake-utils.follows = "flake-utils";
   };
-  inputs.glitch-soc = {
-    url = github:glitch-soc/mastodon/6517b7b9f02f8590a8f9c5aa04e3ef9efeb4e757;
-    flake = false;
-  };
+  inputs.glitch-soc.url = https://github.com/piperswe/glitch-soc/archive/refs/heads/add-nix.zip;
+  inputs.vscode-server.url = github:msteen/nixos-vscode-server;
 
-  outputs = { self, deploy-rs, nixpkgs, nixpkgs-master, flake-utils, glitch-soc, ... }@attrs:
+  outputs = { self, deploy-rs, nixpkgs, nixpkgs-master, flake-utils, ... }@attrs:
     let
       systemIndependent = rec {
         nixosConfigurations.wheeler = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = attrs // {
             pkgsMaster = nixpkgs-master.legacyPackages.x86_64-linux;
-            glitch-soc-rev = (builtins.fromJSON (builtins.readFile ./flake.lock)).nodes.glitch-soc.locked.rev;
           };
           modules = [ ./wheeler.nix ];
         };
@@ -93,16 +90,6 @@
               drv = pkgs.writeShellScript "format.sh" ''
                 export PATH="${pkgs.lib.makeBinPath [ pkgs.nixpkgs-fmt ]}:$PATH"
                 exec nixpkgs-fmt *.nix
-              '';
-              program = "${drv}";
-            };
-            updateGlitchsoc = rec {
-              type = "app";
-              drv = pkgs.writeShellScript "updateglitchsoc.sh" ''
-                export PATH="${pkgs.lib.makeBinPath [ pkgs.bundix ]}:$PATH"
-                cd services/mastodon
-                bundix --lockfile="${glitch-soc}/Gemfile.lock" --gemfile="${glitch-soc}/Gemfile"
-                echo "" >> gemset.nix
               '';
               program = "${drv}";
             };

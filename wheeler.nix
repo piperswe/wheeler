@@ -29,6 +29,7 @@
       ./services/samba.nix
       ./services/synapse.nix
       ./services/vaultwarden.nix
+      ./services/vscode-server.nix
       ./services/xrdp.nix
       ./services/xserver.nix
       ./services/yggdrasil.nix
