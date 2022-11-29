@@ -30,8 +30,6 @@
       users root hydra
       users /^(.*)$ \1
     '';
-    ensureDatabases = lib.mkForce [];
-    ensureUsers = lib.mkForce [];
   };
   services.prometheus.exporters.postgres = {
     enable = true;
