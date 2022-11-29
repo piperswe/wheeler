@@ -24,7 +24,7 @@
     inputs.flake-utils.follows = "flake-utils";
   };
   inputs.glitch-soc = {
-    url = github:glitch-soc/mastodon;
+    url = github:glitch-soc/mastodon/6517b7b9f02f8590a8f9c5aa04e3ef9efeb4e757;
     flake = false;
   };
 

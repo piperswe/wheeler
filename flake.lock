@@ -99,16 +99,17 @@
     "glitch-soc": {
       "flake": false,
       "locked": {
-        "lastModified": 1669641420,
-        "narHash": "sha256-USwt2USL6+HoUcuJi3LqTC6Nk7d4WQdwuq4NoGopfGw=",
+        "lastModified": 1669380883,
+        "narHash": "sha256-HQkwwiiyNVXmVWqLnQHJU7BA/WiOdGweuYjBbOdS/b8=",
         "owner": "glitch-soc",
         "repo": "mastodon",
-        "rev": "1a7aa37b60769a10077c585fa76ec848b6866d9a",
+        "rev": "6517b7b9f02f8590a8f9c5aa04e3ef9efeb4e757",
         "type": "github"
       },
       "original": {
         "owner": "glitch-soc",
         "repo": "mastodon",
+        "rev": "6517b7b9f02f8590a8f9c5aa04e3ef9efeb4e757",
         "type": "github"
       }
     },
