@@ -28,6 +28,7 @@
       ./services/rsyslogd.nix
       ./services/samba.nix
       ./services/synapse.nix
+      ./services/transmission.nix
       ./services/vaultwarden.nix
       ./services/vscode-server.nix
       ./services/xrdp.nix
