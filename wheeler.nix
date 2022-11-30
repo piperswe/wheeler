@@ -15,6 +15,7 @@
       ./services/cloudflared.nix
       ./services/computers-computers.nix
       ./services/docker.nix
+      ./services/elasticsearch.nix
       ./services/gerrit.nix
       ./services/grafana.nix
       ./services/hydra.nix
@@ -74,7 +75,7 @@
   networking.dhcpcd.extraConfig = "nohook resolv.conf";
 
   system.autoUpgrade = {
-    enable = true;
+    enable = false;
     flake = github:piperswe/wheeler;
     allowReboot = true;
     rebootWindow = {

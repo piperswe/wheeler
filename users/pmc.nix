@@ -50,11 +50,15 @@
       programs.beets = {
         enable = true;
         settings = {
+          include = [
+            "/home/pmc/beetsauth.yml"
+          ];
           plugins = [
             "chroma"
             "embedart"
             "fetchart"
             "mbsync"
+            "mbcollection"
             "replaygain"
             "mbsubmit"
             "convert"
@@ -99,6 +103,11 @@
             default = "$albumartist/$album%aunique{albumartist album albumdisambig,albumtype year albumdisambig country label}%if{$albumdisambig, [%title{$albumdisambig}]}/$disc_and_track $title";
             singleton = "$albumartist/[non album tracks]/$title";
             comp = "Various Artists/$album%aunique{albumartist album albumdisambig,albumtype year albumdisambig country label}%if{$albumdisambig, [%title{$albumdisambig}]}/$disc_and_track $artist - $title";
+          };
+          mbcollection = {
+            auto = true;
+            collection = "7a8bdef2-e937-42ac-b883-43b739b32798";
+            remove = true;
           };
         };
       };

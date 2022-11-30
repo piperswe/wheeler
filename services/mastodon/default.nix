@@ -25,6 +25,10 @@
     };
     smtp.fromAddress = "noreply@piperswe.me";
     trustedProxy = "::1";
+    elasticsearch = {
+      port = 9200;
+      host = "127.0.0.1";
+    };
   };
 
   services.nginx.virtualHosts."social.piperswe.me" = {
