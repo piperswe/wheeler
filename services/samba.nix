@@ -19,7 +19,7 @@
       security = user 
       use sendfile = yes
       #max protocol = smb2
-      min protocol = SMB3
+      min protocol = NT1
       # note: localhost is the ipv6 localhost ::1
       hosts allow = 192.168.0.0/16 127.0.0.0/8 ::1
       hosts deny = 0.0.0.0/0
