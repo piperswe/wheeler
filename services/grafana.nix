@@ -17,6 +17,12 @@
         email_claim = "email";
         expect_claims = "{ \"iss\": \"https://piper.cloudflareaccess.com\", \"aud\": \"37c5fe375c3a752789a8b445981a6019d654e6f35368cb3e112358b4533579f5\" }";
       };
+      smtp = {
+        enabled = true;
+        host = "localhost:25";
+        from_address = "noreply@piperswe.me";
+        from_name = "Grafana Alerts";
+      };
     };
   };
   services.nginx.virtualHosts."grafana.piperswe.me" = {
