@@ -20,8 +20,10 @@
       ./services/grafana.nix
       ./services/hydra.nix
       ./services/mastodon
+      ./services/mysql.nix
       ./services/nginx.nix
       ./services/openssh.nix
+      ./services/persistence-mc.nix
       ./services/plex.nix
       ./services/postfix.nix
       ./services/postgresql.nix
@@ -173,6 +175,10 @@
       mv system-version.prom.next system-version.prom
     )
   '';
+
+  environment.systemPackages = [
+    pkgs.libwebp
+  ];
 
   users.groups.music-library = { };
   users.groups.video-library = { };
