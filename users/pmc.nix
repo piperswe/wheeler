@@ -43,6 +43,10 @@
 
       programs.helix = {
         enable = true;
+        settings = {
+          editor.true-color = true;
+          theme = "boo_berry";
+        };
       };
 
       programs.git = {
