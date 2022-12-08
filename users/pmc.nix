@@ -18,8 +18,8 @@
       programs.fish.enable = true;
 
       home.sessionVariables = {
-        EDITOR = "nvim";
-        VISUAL = "nvim";
+        EDITOR = "hx";
+        VISUAL = "hx";
       };
 
       home.packages = with pkgs; [
@@ -39,6 +39,10 @@
         plugins = with pkgs.vimPlugins; [
           vim-nix
         ];
+      };
+
+      programs.helix = {
+        enable = true;
       };
 
       programs.git = {
