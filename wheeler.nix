@@ -109,6 +109,8 @@
       PubkeyAcceptedKeyTypes ssh-ed25519
       IdentityFile /etc/nixbuild_id_ed25519
   '';
+  programs.ssh.forwardX11 = true;
+  programs.ssh.setXAuthLocation = true;
 
   programs.ssh.knownHosts = {
     nixbuild = {
@@ -184,6 +186,8 @@
   users.groups.video-library = { };
 
   services.cron.enable = true;
+
+  virtualisation.libvirtd.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

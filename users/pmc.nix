@@ -3,7 +3,7 @@
   users.users.pmc = {
     isNormalUser = true;
     description = "Piper McCorkle";
-    extraGroups = [ "networkmanager" "wheel" "docker" "music-library" "video-library" "mastodon" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "music-library" "video-library" "mastodon" "libvirtd" ];
     shell = pkgs.fish;
   };
   piperswe-pubkeys = {
@@ -32,6 +32,7 @@
         awscli2
         iotop
         screen
+        virt-manager
       ];
 
       programs.neovim = {
