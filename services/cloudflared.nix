@@ -1,7 +1,7 @@
 { pkgsMaster, cloudflared, ... }:
 {
   imports = [ cloudflared.nixosModules.cloudflared ];
-  services.cloudflared = {
+  services.cloudflared-flake = {
     enable = true;
     package = pkgsMaster.cloudflared;
   };
