@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, nixpkgs-update, ... }:
 {
   users.users.pmc = {
     isNormalUser = true;
@@ -22,17 +22,18 @@
         VISUAL = "hx";
       };
 
-      home.packages = with pkgs; [
-        nodejs-16_x
-        nixpkgs-fmt
-        cloudflared
-        htop
-        neofetch
-        docker-compose
-        awscli2
-        iotop
-        screen
-        virt-manager
+      home.packages = [
+        pkgs.nodejs-16_x
+        pkgs.nixpkgs-fmt
+        pkgs.cloudflared
+        pkgs.htop
+        pkgs.neofetch
+        pkgs.docker-compose
+        pkgs.awscli2
+        pkgs.iotop
+        pkgs.screen
+        pkgs.virt-manager
+        nixpkgs-update.packages.x86_64-linux.nixpkgs-update
       ];
 
       programs.neovim = {
