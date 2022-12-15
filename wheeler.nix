@@ -155,10 +155,12 @@
       extra-substituters = [
         "https://nix-cache.piperswe.me"
         "https://cache.ngi0.nixos.org"
+        "https://cache.garnix.io"
       ];
       extra-trusted-public-keys = [
         "nix-cache.piperswe.me:4r7vyJJ/0riN8ILB+YhSCnYeynvxOeZXNsPNV4Fn8mE="
         "cache.ngi0.nixos.org-1:KqH5CBLNSyX184S9BKZJo1LxrxJ9ltnY2uAs5c/f1MA="
+        "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
       ];
       trusted-users = [ "root" "pmc" ];
       access-tokens = "@/var/lib/nix/access-tokens";
