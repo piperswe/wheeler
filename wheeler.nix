@@ -12,6 +12,7 @@
       ./users.nix
       ./services/loki
       ./services/avahi.nix
+      ./services/borg.nix
       ./services/cloudflared.nix
       ./services/computers-computers.nix
       ./services/docker.nix
@@ -140,6 +141,8 @@
     HostKeyAlgorithms=+ssh-rsa
     PubkeyAcceptedAlgorithms=+ssh-rsa
   '';
+
+  programs.mosh.enable = true;
 
   programs.ssh.knownHosts = {
     nixbuild = {
