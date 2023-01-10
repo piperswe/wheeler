@@ -3,7 +3,7 @@
   users.users.pmc = {
     isNormalUser = true;
     description = "Piper McCorkle";
-    extraGroups = [ "networkmanager" "wheel" "docker" "music-library" "video-library" "mastodon" "libvirtd" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "music-library" "video-library" "mastodon" "libvirtd" "scanner" ];
     shell = pkgs.fish;
   };
   piperswe-pubkeys = {
@@ -33,6 +33,8 @@
         pkgs.iotop
         pkgs.screen
         pkgs.virt-manager
+        pkgs.file
+        pkgs.wget
         nixpkgs-update.packages.x86_64-linux.nixpkgs-update
       ];
 
