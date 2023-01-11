@@ -1,6 +1,7 @@
 {
   inputs.nixpkgs.url = github:nixos/nixpkgs/nixos-unstable;
   inputs.nixpkgs-master.url = github:nixos/nixpkgs/master;
+  inputs.nixpkgs-recoll.url = github:piperswe/nixpkgs/recoll-exiftool;
   inputs.flake-utils.url = github:numtide/flake-utils;
   inputs.deploy-rs = {
     url = github:serokell/deploy-rs;
@@ -27,13 +28,14 @@
   inputs.vscode-server.url = github:msteen/nixos-vscode-server;
   inputs.nixpkgs-update.url = github:ryantm/nixpkgs-update;
 
-  outputs = { self, deploy-rs, nixpkgs, nixpkgs-master, flake-utils, ... }@attrs:
+  outputs = { self, deploy-rs, nixpkgs, nixpkgs-master, nixpkgs-recoll, flake-utils, ... }@attrs:
     let
       systemIndependent = rec {
         nixosConfigurations.wheeler = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = attrs // {
             pkgsMaster = nixpkgs-master.legacyPackages.x86_64-linux;
+            pkgsRecoll = nixpkgs-recoll.legacyPackages.x86_64-linux;
           };
           modules = [ ./wheeler.nix ];
         };

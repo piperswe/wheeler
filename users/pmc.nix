@@ -1,4 +1,4 @@
-{ pkgs, nixpkgs-update, ... }:
+{ pkgs, nixpkgs-update, pkgsRecoll, ... }:
 {
   users.users.pmc = {
     isNormalUser = true;
@@ -35,6 +35,12 @@
         pkgs.virt-manager
         pkgs.file
         pkgs.wget
+        pkgs.ghostscript
+        pkgs.unrtf
+        pkgs.evince
+        pkgs.google-chrome
+        (pkgs.writeScriptBin "google-chrome" "exec ${pkgs.google-chrome}/bin/google-chrome-stable \"$@\"")
+        pkgsRecoll.recoll
         nixpkgs-update.packages.x86_64-linux.nixpkgs-update
       ];
 

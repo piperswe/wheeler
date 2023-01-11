@@ -20,6 +20,7 @@
       ./services/gerrit.nix
       ./services/grafana.nix
       ./services/hydra.nix
+      ./services/ipfs-kubo.nix
       ./services/mastodon
       ./services/mysql.nix
       ./services/nginx.nix
@@ -35,7 +36,7 @@
       ./services/transmission.nix
       ./services/vaultwarden.nix
       ./services/vscode-server.nix
-      ./services/xrdp.nix
+      # ./services/xrdp.nix
       ./services/xserver.nix
       ./services/yggdrasil.nix
     ];
