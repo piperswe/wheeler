@@ -72,4 +72,10 @@ in
     allowedTCPPorts = [ 25565 ];
     allowedUDPPorts = [ 25565 ];
   };
+  services.nginx.virtualHosts."minecraft-map.piperswe.me" = {
+    locations."/" = {
+      proxyPass = "http://localhost:8123";
+      proxyWebsockets = true;
+    };
+  };
 }

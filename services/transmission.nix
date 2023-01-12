@@ -11,5 +11,7 @@
     openPeerPorts = true;
     openRPCPort = true;
   };
-  systemd.services.transmission.serviceConfig.BindPaths = [ "/tank/softwarearchive/MSDN" ];
+  systemd.services.transmission.serviceConfig.BindPaths = [ "/tank/softwarearchive" ];
+  users.groups.softwarearchive = {};
+  users.users.transmission.extraGroups = [ "softwarearchive" ];
 }

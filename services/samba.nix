@@ -52,6 +52,17 @@
         "fruit:time machine" = "yes";
         "vfs objects" = "catia fruit streams_xattr";
       };
+      vm-server-backups = {
+        path = "/home/pmc/vm-server-backups";
+        browseable = "yes";
+        "read only" = "no";
+        "guest ok" = "no";
+        "create mask" = "0644";
+        "directory mask" = "0755";
+        "force user" = "pmc";
+        "force group" = "users";
+        "valid users" = "pmc";
+      };
       tank = {
         path = "/tank";
         browseable = "yes";

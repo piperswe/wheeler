@@ -1,9 +1,9 @@
-{ pkgs, nixpkgs-update, pkgsRecoll, ... }:
+{ pkgs, nixpkgs-update, pkgsRecoll, devenv, ... }:
 {
   users.users.pmc = {
     isNormalUser = true;
     description = "Piper McCorkle";
-    extraGroups = [ "networkmanager" "wheel" "docker" "music-library" "video-library" "mastodon" "libvirtd" "scanner" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "music-library" "video-library" "mastodon" "libvirtd" "scanner" "softwarearchive" ];
     shell = pkgs.fish;
   };
   piperswe-pubkeys = {
@@ -42,6 +42,7 @@
         (pkgs.writeScriptBin "google-chrome" "exec ${pkgs.google-chrome}/bin/google-chrome-stable \"$@\"")
         pkgsRecoll.recoll
         nixpkgs-update.packages.x86_64-linux.nixpkgs-update
+        devenv.packages.x86_64-linux.devenv
       ];
 
       programs.neovim = {
@@ -129,6 +130,8 @@
           };
         };
       };
+
+      programs.direnv.enable = true;
 
       home.stateVersion = "22.05";
     };

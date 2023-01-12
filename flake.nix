@@ -27,6 +27,7 @@
   inputs.glitch-soc.url = https://github.com/piperswe/glitch-soc/archive/refs/heads/add-nix.zip;
   inputs.vscode-server.url = github:msteen/nixos-vscode-server;
   inputs.nixpkgs-update.url = github:ryantm/nixpkgs-update;
+  inputs.devenv.url = github:cachix/devenv/v0.5;
 
   outputs = { self, deploy-rs, nixpkgs, nixpkgs-master, nixpkgs-recoll, flake-utils, ... }@attrs:
     let
