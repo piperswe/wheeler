@@ -133,6 +133,48 @@
 
       programs.direnv.enable = true;
 
+      programs.mbsync = {
+        enable = true;
+        extraConfig = ''
+          IMAPAccount fastmail
+          Host imap.fastmail.com
+          User contact@piperswe.me
+          PassCmd "${pkgs.coreutils}/bin/cat ~/.fastmail_password"
+          SSLType IMAPS
+
+          IMAPStore fastmail-remote
+          Account fastmail
+
+          MaildirStore fastmail-local
+          SubFolders Verbatim
+          Path ~/.mail/fastmail/
+          Inbox ~/.mail/fastmail/Inbox
+
+          Channel fastmail
+          Far :fastmail-remote:
+          Near :fastmail-local:
+          Patterns *
+          Create Near
+          Remove None
+          Expunge None
+          SyncState *
+        '';
+      };
+      services.mbsync = {
+        enable = true;
+        frequency = "5m";
+        postExec = "${pkgs.notmuch}/bin/notmuch new";
+      };
+
+      programs.notmuch = {
+        enable = true;
+        extraConfig = {
+          database.path = "/home/pmc/.mail/fastmail";
+          user.name = "Piper McCorkle";
+          user.primary_email = "contact@piperswe.me";
+        };
+      };
+
       home.stateVersion = "22.05";
     };
 }
