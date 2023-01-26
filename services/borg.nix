@@ -6,6 +6,10 @@
       "/var/lib"
       "/tank/media/music"
       "/tank/scaningest"
+      "/tank/softwarearchive"
+    ];
+    exclude = [
+      "/tank/softwarearchive/MSDN"
     ];
     repo = "ssh://pmc@granite.piperswe.me/volume1/wheeler-borg/repo";
     encryption = {
