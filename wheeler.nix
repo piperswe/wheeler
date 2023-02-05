@@ -14,6 +14,7 @@
       ./services/avahi.nix
       ./services/borg.nix
       ./services/cloudflared.nix
+      ./services/clamav.nix
       ./services/computers-computers.nix
       ./services/docker.nix
       ./services/elasticsearch.nix
