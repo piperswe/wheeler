@@ -2,6 +2,7 @@
   inputs.nixpkgs.url = github:nixos/nixpkgs/nixos-unstable;
   inputs.nixpkgs-master.url = github:nixos/nixpkgs/master;
   inputs.nixpkgs-recoll.url = github:piperswe/nixpkgs/recoll-exiftool;
+  inputs.nixpkgs-cloudflared.url = github:piperswe/nixpkgs/cloudflared-2023.2.1;
   inputs.flake-utils.url = github:numtide/flake-utils;
   inputs.deploy-rs = {
     url = github:serokell/deploy-rs;
@@ -29,7 +30,7 @@
   inputs.nixpkgs-update.url = github:ryantm/nixpkgs-update;
   inputs.devenv.url = github:cachix/devenv/v0.5;
 
-  outputs = { self, deploy-rs, nixpkgs, nixpkgs-master, nixpkgs-recoll, flake-utils, ... }@attrs:
+  outputs = { self, deploy-rs, nixpkgs, nixpkgs-master, nixpkgs-recoll, nixpkgs-cloudflared, flake-utils, ... }@attrs:
     let
       systemIndependent = rec {
         nixosConfigurations.wheeler = nixpkgs.lib.nixosSystem {
@@ -37,6 +38,7 @@
           specialArgs = attrs // {
             pkgsMaster = nixpkgs-master.legacyPackages.x86_64-linux;
             pkgsRecoll = nixpkgs-recoll.legacyPackages.x86_64-linux;
+            pkgsCloudflared = nixpkgs-cloudflared.legacyPackages.x86_64-linux;
           };
           modules = [ ./wheeler.nix ];
         };

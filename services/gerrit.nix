@@ -1,7 +1,7 @@
 { ... }:
 {
   services.gerrit = {
-    enable = true;
+    enable = false;
     listenAddress = "127.0.0.1:8226";
     builtinPlugins = [
       "gitiles"

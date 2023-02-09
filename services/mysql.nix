@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   services.mysql = {
-    enable = true;
+    enable = false;
     package = pkgs.mysql80;
     ensureDatabases = [ "persistencemcprism" ];
     ensureUsers = [
