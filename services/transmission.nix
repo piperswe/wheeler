@@ -12,6 +12,6 @@
     openRPCPort = true;
   };
   systemd.services.transmission.serviceConfig.BindPaths = [ "/tank/softwarearchive" ];
-  users.groups.softwarearchive = {};
+  users.groups.softwarearchive = { };
   users.users.transmission.extraGroups = [ "softwarearchive" ];
 }

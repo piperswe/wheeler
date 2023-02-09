@@ -112,37 +112,35 @@
       PubkeyAcceptedKeyTypes ssh-ed25519
       IdentityFile /etc/nixbuild_id_ed25519
   '';
-  programs.ssh.forwardX11 = true;
   programs.ssh.setXAuthLocation = true;
-  services.openssh.kexAlgorithms = [
-          "sntrup761x25519-sha512@openssh.com"
-          "curve25519-sha256"
-          "curve25519-sha256@libssh.org"
-          "diffie-hellman-group-exchange-sha256"
-          "diffie-hellman-group-exchange-sha1"
-        ];
-  services.openssh.ciphers = [
-          "chacha20-poly1305@openssh.com"
-          "aes256-gcm@openssh.com"
-          "aes128-gcm@openssh.com"
-          "aes256-ctr"
-          "aes192-ctr"
-          "aes128-ctr"
-          "aes128-cbc"
-        ];
-  services.openssh.macs = [
+  services.openssh.settings.X11Forwarding = true;
+  services.openssh.settings.KexAlgorithms = [
+    "sntrup761x25519-sha512@openssh.com"
+    "curve25519-sha256"
+    "curve25519-sha256@libssh.org"
+    "diffie-hellman-group-exchange-sha256"
+    "diffie-hellman-group-exchange-sha1"
+  ];
+  services.openssh.settings.Ciphers = [
+    "chacha20-poly1305@openssh.com"
+    "aes256-gcm@openssh.com"
+    "aes128-gcm@openssh.com"
+    "aes256-ctr"
+    "aes192-ctr"
+    "aes128-ctr"
+    "aes128-cbc"
+  ];
+  services.openssh.settings.Macs = [
     "hmac-sha2-512-etm@openssh.com"
-  "hmac-sha2-256-etm@openssh.com"
-  "umac-128-etm@openssh.com"
-  "hmac-sha2-512"
-  "hmac-sha2-256"
-  "umac-128@openssh.com"
+    "hmac-sha2-256-etm@openssh.com"
+    "umac-128-etm@openssh.com"
+    "hmac-sha2-512"
+    "hmac-sha2-256"
+    "umac-128@openssh.com"
     "hmac-sha1"
   ];
-  services.openssh.extraConfig = ''
-    HostKeyAlgorithms=+ssh-rsa
-    PubkeyAcceptedAlgorithms=+ssh-rsa
-  '';
+  services.openssh.settings.HostKeyAlgorithms = "ssh-ed25519,ssh-rsa";
+  services.openssh.settings.PubkeyAcceptedAlgorithms = "ssh-ed25519,ssh-rsa";
 
   programs.mosh.enable = true;
 
