@@ -76,8 +76,18 @@
 
   networking.hostId = "273c42cb";
   networking.hostName = "wheeler";
-  networking.nameservers = [ "1.1.1.1" "1.0.0.1" ];
+  networking.nameservers = [ "1.1.1.1" "1.0.0.1" "2606:4700:4700::1111" "2606:4700:4700::1001" ];
   networking.dhcpcd.extraConfig = "nohook resolv.conf";
+  networking.interfaces.enp8s0.ipv6.addresses = [
+    {
+      address = "2600:1700:96d0:4a6f::4";
+      prefixLength = 64;
+    }
+  ];
+  networking.defaultGateway6 = {
+    address = "2600:1700:96d0:4a6f::1";
+    interface = "enp8s0";
+  };
 
   system.autoUpgrade = {
     enable = false;
