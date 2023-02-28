@@ -26,6 +26,7 @@
       ./services/mysql.nix
       ./services/nginx.nix
       ./services/openssh.nix
+      ./services/paperless.nix
       ./services/persistence-mc.nix
       ./services/plex.nix
       ./services/postfix.nix
