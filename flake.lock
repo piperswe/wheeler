@@ -301,16 +301,16 @@
     },
     "nixpkgs-cloudflared": {
       "locked": {
-        "lastModified": 1675953359,
-        "narHash": "sha256-4fUnnFB15Pj0nodkioKfyL+3AET4agpcgXu8ZKwx5ew=",
+        "lastModified": 1677793005,
+        "narHash": "sha256-9X0FKY1ztETyz67RxLS6cthy1w4gzF1qQ1ZINMYlNuk=",
         "owner": "piperswe",
         "repo": "nixpkgs",
-        "rev": "148bdd61e77c1b73798a1ffb93293a9bd89c07fd",
+        "rev": "e39ea4ca3ddeaeba5007559bdc4c0896f353648d",
         "type": "github"
       },
       "original": {
         "owner": "piperswe",
-        "ref": "cloudflared-2023.2.1",
+        "ref": "cloudflared-2023.3.0",
         "repo": "nixpkgs",
         "type": "github"
       }

@@ -2,7 +2,7 @@
   inputs.nixpkgs.url = github:nixos/nixpkgs/nixos-unstable;
   inputs.nixpkgs-master.url = github:nixos/nixpkgs/master;
   inputs.nixpkgs-recoll.url = github:piperswe/nixpkgs/recoll-exiftool;
-  inputs.nixpkgs-cloudflared.url = github:piperswe/nixpkgs/cloudflared-2023.2.1;
+  inputs.nixpkgs-cloudflared.url = github:piperswe/nixpkgs/cloudflared-2023.3.0;
   inputs.flake-utils.url = github:numtide/flake-utils;
   inputs.deploy-rs = {
     url = github:serokell/deploy-rs;
