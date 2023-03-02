@@ -29,7 +29,7 @@
         pkgs.htop
         pkgs.neofetch
         pkgs.docker-compose
-        pkgs.awscli2
+        # pkgs.awscli2
         pkgs.iotop
         pkgs.screen
         pkgs.virt-manager
