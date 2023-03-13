@@ -17,7 +17,7 @@ in
   };
   users.users.persistence-mc = {
     isSystemUser = true;
-    home = "/var/lib/persistence-mc/home";
+    home = "/on-ssd/persistence-mc/home";
     group = "persistence-mc";
   };
   systemd.sockets.persistence-mc = {
@@ -41,7 +41,7 @@ in
       ExecStop = "${stopScript} $MAINPID";
       Restart = "always";
       User = "persistence-mc";
-      WorkingDirectory = "/var/lib/persistence-mc";
+      WorkingDirectory = "/on-ssd/persistence-mc";
       StandardInput = "socket";
       StandardOutput = "journal";
       StandardError = "journal";

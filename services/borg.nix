@@ -7,6 +7,7 @@
       "/tank/media/music"
       "/tank/scaningest"
       "/tank/softwarearchive"
+      "/on-ssd"
     ];
     exclude = [
       "/tank/softwarearchive/MSDN"
