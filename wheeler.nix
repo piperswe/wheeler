@@ -155,6 +155,8 @@
 
   programs.mosh.enable = true;
 
+  programs.fish.enable = true;
+
   programs.ssh.knownHosts = {
     nixbuild = {
       hostNames = [ "eu.nixbuild.net" ];

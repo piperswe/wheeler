@@ -11,6 +11,7 @@
     ];
     exclude = [
       "/tank/softwarearchive/MSDN"
+      "/home/pmc/win-backup"
     ];
     repo = "ssh://pmc@granite.piperswe.me/volume1/wheeler-borg/repo";
     encryption = {
