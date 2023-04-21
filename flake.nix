@@ -29,6 +29,7 @@
   inputs.vscode-server.url = github:msteen/nixos-vscode-server;
   inputs.nixpkgs-update.url = github:ryantm/nixpkgs-update;
   inputs.devenv.url = github:cachix/devenv/v0.5;
+  inputs.arion.url = github:hercules-ci/arion;
 
   outputs = { self, deploy-rs, nixpkgs, nixpkgs-master, nixpkgs-recoll, nixpkgs-cloudflared, flake-utils, ... }@attrs:
     let
