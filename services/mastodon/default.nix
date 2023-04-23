@@ -11,7 +11,8 @@
     #  yarnSha256Override = "sha256-bSpBJBOIRsSwQioT4Ha5jPV0mEPmlUv5HZ/tV5oLenk=";
     #  dependenciesDir = ./.;
     #};
-    package = glitch-soc.packages.x86_64-linux.default;
+    # package = glitch-soc.packages.x86_64-linux.default;
+    package = pkgsMaster.mastodon;
     localDomain = "piperswe.me";
     extraConfig = {
       WEB_DOMAIN = "social.piperswe.me";
