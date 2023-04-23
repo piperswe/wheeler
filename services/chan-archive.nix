@@ -24,6 +24,14 @@
     wantedBy = [ "multi-user.target" ];
     environment = {
       DATABASE_URL = "postgresql:///chanarchive?sslmode=disable&host=/var/run/postgresql";
+      PORT = "14783";
+    };
+  };
+
+  services.nginx.virtualHosts."chan-archive.piperswe.me" = {
+    locations."/" = {
+      proxyPass = "http://localhost:14783";
+      proxyWebsockets = true;
     };
   };
 }
