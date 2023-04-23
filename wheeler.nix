@@ -14,6 +14,7 @@
       ./services/arion.nix
       ./services/avahi.nix
       ./services/borg.nix
+      ./services/chan-archive.nix
       ./services/cloudflared.nix
       ./services/clamav.nix
       ./services/computers-computers.nix

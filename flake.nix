@@ -30,6 +30,7 @@
   inputs.nixpkgs-update.url = github:ryantm/nixpkgs-update;
   inputs.devenv.url = github:cachix/devenv/v0.5;
   inputs.arion.url = github:hercules-ci/arion;
+  inputs.chan-archive.url = sourcehut:~pmc/chan-archive;
 
   outputs = { self, deploy-rs, nixpkgs, nixpkgs-master, nixpkgs-recoll, nixpkgs-cloudflared, flake-utils, ... }@attrs:
     let

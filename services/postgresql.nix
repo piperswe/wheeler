@@ -8,6 +8,7 @@
       host all all 127.0.0.1/32 md5
       host all all ::1/128 md5
       host all all 192.168.100.0/24 md5
+      host all all 192.168.0.0/24 md5
     '';
     initialScript = pkgs.writeText "postgres-init.sql" ''
       CREATE USER pmc SUPERUSER;
@@ -56,5 +57,17 @@
   services.prometheus.exporters.postgres = {
     enable = true;
     runAsLocalSuperUser = true;
+  };
+  services.pgadmin = {
+    enable = true;
+    port = 5050;
+    initialEmail = "contact@piperswe.me";
+    initialPasswordFile = "/etc/pgadmin-initial-password";
+  };
+  services.nginx.virtualHosts."pgadmin.piperswe.me" = {
+    locations."/" = {
+      proxyPass = "http://localhost:5050";
+      proxyWebsockets = true;
+    };
   };
 }
