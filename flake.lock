@@ -30,11 +30,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1682368406,
-        "narHash": "sha256-NeU6lY8/ht09N7qjapDs8wVinii7LCXSWwvw21U7Xag=",
+        "lastModified": 1682368741,
+        "narHash": "sha256-duHdeeUUBgvFXuLcXng1Kp54/ndn4mc+DJkYyLgNfEM=",
         "owner": "~pmc",
         "repo": "chan-archive",
-        "rev": "aa99a60ef6fe1a3ef3697eeaafbc604aaf0f4d08",
+        "rev": "24808168e44e200d4117ab47c6883a4158883cec",
         "type": "sourcehut"
       },
       "original": {
