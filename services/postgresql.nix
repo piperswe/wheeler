@@ -3,6 +3,9 @@
   services.postgresql = {
     enable = true;
     enableTCPIP = true;
+    extraPlugins = with pkgs.postgresql_14.pkgs; [
+      plv8
+    ];
     authentication = lib.mkOverride 10 ''
       local all all ident map=users
       host all all 127.0.0.1/32 md5
