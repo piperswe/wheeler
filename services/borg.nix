@@ -12,6 +12,8 @@
     exclude = [
       "/tank/softwarearchive/MSDN"
       "/home/pmc/win-backup"
+      "/var/lib/postgresql"
+      "/var/lib/mysql"
     ];
     patterns = [
       "- /**/*/.zfs/**/*"
