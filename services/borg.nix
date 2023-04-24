@@ -13,6 +13,9 @@
       "/tank/softwarearchive/MSDN"
       "/home/pmc/win-backup"
     ];
+    patterns = [
+      "- /**/*/.zfs/**/*"
+    ];
     repo = "ssh://pmc@granite.piperswe.me/volume1/wheeler-borg/repo";
     encryption = {
       mode = "repokey-blake2";
