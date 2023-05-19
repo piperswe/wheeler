@@ -60,7 +60,6 @@
   services.smartd = {
     enable = true;
     notifications = {
-      test = true;
       mail.enable = true;
       mail.recipient = "contact@piperswe.me";
     };

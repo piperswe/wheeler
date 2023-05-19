@@ -41,7 +41,12 @@
         nixosConfigurations.wheeler = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = attrs // {
-            pkgsMaster = nixpkgs-master.legacyPackages.x86_64-linux;
+            pkgsMaster = import nixpkgs-master {
+              system = "x86_64-linux";
+              config.permittedInsecurePackages = [
+                "openssl-1.1.1t"
+              ];
+            };
             pkgsRecoll = nixpkgs-recoll.legacyPackages.x86_64-linux;
             pkgsCloudflared = nixpkgs-cloudflared.legacyPackages.x86_64-linux;
           };

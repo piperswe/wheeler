@@ -1,8 +1,8 @@
 { pkgs, pkgsMaster, config, glitch-soc, ... }:
 {
-  imports = [ ./module.nix ];
+  # imports = [ ./module.nix ];
 
-  services.custom-mastodon = {
+  services.mastodon = {
     enable = true;
     #package = pkgsMaster.callPackage ./glitch-soc.nix {
     #  pname = "glitch-soc";
@@ -24,6 +24,7 @@
       S3_ALIAS_HOST = "social-assets.piperswe.me";
       S3_PERMISSION = "private";
     };
+    extraEnvFiles = [ "/var/lib/mastodon/.extra_secrets" ];
     smtp.fromAddress = "noreply@piperswe.me";
     trustedProxy = "::1";
     elasticsearch = {
@@ -33,7 +34,7 @@
   };
 
   services.nginx.virtualHosts."social.piperswe.me" = {
-    root = "${config.services.custom-mastodon.package}/public/";
+    root = "${config.services.mastodon.package}/public/";
 
     locations."/system" = {
       extraConfig = ''
@@ -75,5 +76,5 @@
     };
   };
 
-  users.groups.${config.services.custom-mastodon.group}.members = [ config.services.nginx.user ];
+  users.groups.${config.services.mastodon.group}.members = [ config.services.nginx.user ];
 }
