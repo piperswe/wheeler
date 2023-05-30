@@ -24,6 +24,22 @@
           ];
         };
       };
+      "roon" = {
+        settings.services."roon".service = {
+          image = "steefdebruijn/docker-roonserver:latest@sha256:8797f9fc214487c2af5079d5ad892ead00a10cc956a5222c4b387c6bdd2b8c66";
+          restart = "always";
+          network_mode = "host";
+          environment = {
+            TZ = "America/Chicago";
+          };
+          volumes = [
+            "/var/lib/roon/app:/app"
+            "/var/lib/roon/data:/data"
+            "/tank/media/music/library:/music/tank"
+            "/var/lib/roon/backup:/backup"
+          ];
+        };
+      };
     };
   };
   networking.firewall = {
