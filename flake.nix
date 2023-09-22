@@ -26,7 +26,7 @@
   };
   inputs.glitch-soc.url = https://github.com/piperswe/glitch-soc/archive/refs/heads/add-nix.zip;
   inputs.vscode-server.url = github:msteen/nixos-vscode-server;
-  inputs.nixpkgs-update.url = github:ryantm/nixpkgs-update;
+  inputs.nixpkgs-update.url = github:ryantm/nixpkgs-update/b9f95c67031c7de53cd3c5ea08bb68bc34a17ef3;
   inputs.devenv.url = github:cachix/devenv/v0.5;
   inputs.arion.url = github:hercules-ci/arion;
   inputs.chan-archive = {
@@ -46,6 +46,7 @@
               config.permittedInsecurePackages = [
                 "openssl-1.1.1t"
               ];
+              config.allowUnfree = true;
             };
             pkgsRecoll = nixpkgs-recoll.legacyPackages.x86_64-linux;
             pkgsCloudflared = nixpkgs-cloudflared.legacyPackages.x86_64-linux;

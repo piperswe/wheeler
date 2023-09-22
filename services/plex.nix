@@ -1,8 +1,9 @@
-{ ... }:
+{ pkgsMaster, ... }:
 {
   services.plex = {
     enable = true;
     openFirewall = true;
+    package = pkgsMaster.plex;
   };
   services.nginx.virtualHosts."plex.piperswe.me" = {
     locations."/" = {

@@ -34,8 +34,11 @@
       ./services/postfix.nix
       ./services/postgresql.nix
       ./services/prometheus.nix
+      ./services/radarr.nix
       ./services/rsyslogd.nix
+      ./services/sabnzbd.nix
       ./services/samba.nix
+      ./services/sonarr.nix
       ./services/synapse.nix
       ./services/transmission.nix
       ./services/vaultwarden.nix
@@ -69,10 +72,26 @@
     datasets."tank" = {
       autosnap = true;
       recursive = true;
-      yearly = 5;
-      monthly = 12;
-      daily = 30;
-      hourly = 24;
+      yearly = 0;
+      monthly = 1;
+      daily = 5;
+      hourly = 3;
+    };
+    datasets."ssd/postgresql" = {
+      autosnap = true;
+      recursive = true;
+      yearly = 1;
+      monthly = 1;
+      daily = 5;
+      hourly = 3;
+    };
+    datasets."ssd/plex" = {
+      autosnap = true;
+      recursive = true;
+      yearly = 1;
+      monthly = 1;
+      daily = 5;
+      hourly = 3;
     };
   };
 
@@ -82,17 +101,17 @@
   networking.dhcpcd.extraConfig = "nohook resolv.conf";
   networking.interfaces.enp8s0 = {
     mtu = 9000;
-    ipv6.addresses = [
-      {
-        address = "2600:1700:96d0:4a6f::4";
-        prefixLength = 64;
-      }
-    ];
+    #ipv6.addresses = [
+    #  {
+    #    address = "2600:1700:96d0:4a6f::4";
+    #    prefixLength = 64;
+    #  }
+    #];
   };
-  networking.defaultGateway6 = {
-    address = "2600:1700:96d0:4a6f::1";
-    interface = "enp8s0";
-  };
+  #networking.defaultGateway6 = {
+  #  address = "2600:1700:96d0:4a6f::1";
+  #  interface = "enp8s0";
+  #};
 
   system.autoUpgrade = {
     enable = false;
