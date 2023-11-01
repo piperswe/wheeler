@@ -1,5 +1,5 @@
 {
-  inputs.nixpkgs.url = github:nixos/nixpkgs/nixos-unstable;
+  inputs.nixpkgs.url = github:nixos/nixpkgs/master;
   inputs.nixpkgs-master.url = github:nixos/nixpkgs/master;
   inputs.nixpkgs-recoll.url = github:piperswe/nixpkgs/recoll-exiftool;
   inputs.nixpkgs-cloudflared.url = github:piperswe/nixpkgs/cloudflared-2023.3.0;

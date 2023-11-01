@@ -14,7 +14,7 @@
       ./services/arion.nix
       ./services/avahi.nix
       ./services/borg.nix
-      ./services/chan-archive.nix
+      # ./services/chan-archive.nix
       ./services/cloudflared.nix
       ./services/clamav.nix
       ./services/computers-computers.nix
@@ -24,7 +24,7 @@
       ./services/grafana.nix
       ./services/hydra.nix
       ./services/ipfs-kubo.nix
-      ./services/mastodon
+      # ./services/mastodon
       ./services/mysql.nix
       ./services/nginx.nix
       ./services/openssh.nix
@@ -53,7 +53,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
   boot.supportedFilesystems = [ "zfs" ];
-  boot.zfs.extraPools = [ "tank" ];
+  boot.zfs.extraPools = [ "tank" "ssd" ];
 
   boot.kernel.sysctl = {
     "kernel.task_delayacct" = 1;
@@ -136,6 +136,9 @@
   home-manager.useUserPackages = true;
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.permittedInsecurePackages = [
+    "python3.11-django-3.1.14"
+  ];
   hardware.enableAllFirmware = true;
 
   services.xserver.videoDrivers = [ "nvidia" ];

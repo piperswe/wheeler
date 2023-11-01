@@ -20,6 +20,8 @@
       home.sessionVariables = {
         EDITOR = "hx";
         VISUAL = "hx";
+        CHROME_BINARY = "${pkgs.google-chrome}/bin/google-chrome-stable";
+        YOUTUBEDL_BINARY = "${pkgs.yt-dlp}/bin/yt-dlp";
       };
 
       home.packages = [
@@ -40,6 +42,8 @@
         pkgs.evince
         pkgs.google-chrome
         (pkgs.writeScriptBin "google-chrome" "exec ${pkgs.google-chrome}/bin/google-chrome-stable \"$@\"")
+        pkgs.archivebox
+        pkgs.ripgrep
         pkgsRecoll.recoll
         nixpkgs-update.packages.x86_64-linux.nixpkgs-update
         devenv.packages.x86_64-linux.devenv
