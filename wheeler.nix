@@ -10,7 +10,7 @@
       piperswe-pubkeys.nixosModules.sshAuthorizedKeys
       ./hardware.nix
       ./users.nix
-      ./services/loki
+      # ./services/loki
       ./services/arion.nix
       ./services/avahi.nix
       ./services/borg.nix
@@ -20,29 +20,29 @@
       ./services/computers-computers.nix
       ./services/docker.nix
       ./services/elasticsearch.nix
-      ./services/gerrit.nix
-      ./services/grafana.nix
-      ./services/hydra.nix
+      # ./services/gerrit.nix
+      # ./services/grafana.nix
+      # ./services/hydra.nix
       ./services/ipfs-kubo.nix
       # ./services/mastodon
       ./services/mysql.nix
       ./services/nginx.nix
       ./services/openssh.nix
-      ./services/paperless.nix
-      ./services/persistence-mc.nix
+      # ./services/paperless.nix
+      # ./services/persistence-mc.nix
       ./services/plex.nix
       ./services/postfix.nix
       ./services/postgresql.nix
-      ./services/prometheus.nix
+      # ./services/prometheus.nix
       ./services/radarr.nix
       ./services/rsyslogd.nix
       ./services/sabnzbd.nix
       ./services/samba.nix
       ./services/sonarr.nix
-      ./services/synapse.nix
+      # ./services/synapse.nix
       ./services/transmission.nix
-      ./services/vaultwarden.nix
-      ./services/vscode-server.nix
+      # ./services/vaultwarden.nix
+      # ./services/vscode-server.nix
       # ./services/xrdp.nix
       ./services/xserver.nix
       ./services/yggdrasil.nix
@@ -128,6 +128,7 @@
   i18n.defaultLocale = "en_US.utf8";
 
   security.sudo = {
+    enable = true;
     execWheelOnly = true;
     wheelNeedsPassword = false;
   };
