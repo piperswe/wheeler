@@ -28,7 +28,7 @@
   inputs.vscode-server.url = github:msteen/nixos-vscode-server;
   inputs.nixpkgs-update.url = github:ryantm/nixpkgs-update/b9f95c67031c7de53cd3c5ea08bb68bc34a17ef3;
   inputs.devenv.url = github:cachix/devenv/v0.5;
-  inputs.arion.url = github:hercules-ci/arion;
+  inputs.arion.url = github:hercules-ci/arion/da2141cd9383c8c1cdcd3364b1ba6c32058ba659;
   inputs.chan-archive = {
     url = sourcehut:~pmc/chan-archive;
     inputs.nixpkgs.follows = "nixpkgs";

@@ -11,7 +11,7 @@
       ./hardware.nix
       ./users.nix
       # ./services/loki
-      ./services/arion.nix
+      # ./services/arion.nix
       ./services/avahi.nix
       ./services/borg.nix
       # ./services/chan-archive.nix
@@ -142,7 +142,7 @@
   ];
   hardware.enableAllFirmware = true;
 
-  services.xserver.videoDrivers = [ "nvidia" ];
+  #services.xserver.videoDrivers = [ "nvidia" ];
   hardware.opengl.enable = true;
 
   programs.ssh.extraConfig = ''

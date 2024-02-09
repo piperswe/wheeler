@@ -5,6 +5,9 @@
     description = "Piper McCorkle";
     extraGroups = [ "networkmanager" "wheel" "docker" "music-library" "video-library" "mastodon" "libvirtd" "scanner" "softwarearchive" "media-downloads" ];
     shell = pkgs.fish;
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIm65U48ifWgknsk+CuRt5Z11fbW370KekEIrbrrJSpy pmc@DESKTOP-FETJLMV"
+    ];
   };
   piperswe-pubkeys = {
     enable = true;
@@ -43,6 +46,9 @@
         pkgs.google-chrome
         (pkgs.writeScriptBin "google-chrome" "exec ${pkgs.google-chrome}/bin/google-chrome-stable \"$@\"")
         pkgs.ripgrep
+        pkgs.lm_sensors
+        pkgs.yt-dlp
+        pkgs.rsync
         pkgsRecoll.recoll
         nixpkgs-update.packages.x86_64-linux.nixpkgs-update
         devenv.packages.x86_64-linux.devenv
@@ -141,21 +147,71 @@
         extraConfig = ''
           IMAPAccount fastmail
           Host imap.fastmail.com
+          port 993
           User contact@piperswe.me
           PassCmd "${pkgs.coreutils}/bin/cat ~/.fastmail_password"
           SSLType IMAPS
+          SSLVersions TLSv1.2
+
+          IMAPAccount piperswegmail
+          Host imap.gmail.com
+          SSLType IMAPS
+          AuthMechs LOGIN
+          User piperswe@gmail.com
+          PassCmd "${pkgs.coreutils}/bin/cat ~/.piperswegmail_password"
+
+          IMAPAccount zebmccorklegmail
+          Host imap.gmail.com
+          SSLType IMAPS
+          AuthMechs LOGIN
+          User zebmccorkle@gmail.com
+          PassCmd "${pkgs.coreutils}/bin/cat ~/.zebmccorklegmail_password"
 
           IMAPStore fastmail-remote
           Account fastmail
+
+          IMAPStore piperswegmail-remote
+          Account piperswegmail
+
+          IMAPStore zebmccorklegmail-remote
+          Account zebmccorklegmail
 
           MaildirStore fastmail-local
           SubFolders Verbatim
           Path ~/.mail/fastmail/
           Inbox ~/.mail/fastmail/Inbox
 
+          MaildirStore piperswegmail-local
+          SubFolders Verbatim
+          Path ~/.mail/piperswegmail/
+          Inbox ~/.mail/piperswegmail/Inbox
+
+          MaildirStore zebmccorklegmail-local
+          SubFolders Verbatim
+          Path ~/.mail/zebmccorklegmail/
+          Inbox ~/.mail/zebmccorklegmail/Inbox
+
           Channel fastmail
           Far :fastmail-remote:
           Near :fastmail-local:
+          Patterns *
+          Create Near
+          Remove None
+          Expunge None
+          SyncState *
+
+          Channel piperswegmail
+          Far :piperswegmail-remote:
+          Near :piperswegmail-local:
+          Patterns *
+          Create Near
+          Remove None
+          Expunge None
+          SyncState *
+
+          Channel zebmccorklegmail
+          Far :zebmccorklegmail-remote:
+          Near :zebmccorklegmail-local:
           Patterns *
           Create Near
           Remove None
