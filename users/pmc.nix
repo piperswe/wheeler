@@ -50,6 +50,7 @@
         pkgs.yt-dlp
         pkgs.rsync
         pkgsRecoll.recoll
+        pkgs.aspell
         nixpkgs-update.packages.x86_64-linux.nixpkgs-update
         devenv.packages.x86_64-linux.devenv
       ];
