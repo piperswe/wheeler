@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, nixpkgs, home-manager, piperswe-pubkeys, ... }:
+{ config, pkgs, lib, nixpkgs, home-manager, piperswe-pubkeys, ... }:
 {
   imports =
     [
@@ -20,6 +20,7 @@
       ./services/computers-computers.nix
       ./services/docker.nix
       ./services/elasticsearch.nix
+      ./services/forgejo-runner.nix
       # ./services/gerrit.nix
       # ./services/grafana.nix
       # ./services/hydra.nix

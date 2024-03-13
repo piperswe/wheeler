@@ -62,15 +62,15 @@
     runAsLocalSuperUser = true;
   };
   services.pgadmin = {
-    enable = true;
+    enable = false;
     port = 5050;
     initialEmail = "contact@piperswe.me";
     initialPasswordFile = "/etc/pgadmin-initial-password";
   };
-  services.nginx.virtualHosts."pgadmin.piperswe.me" = {
-    locations."/" = {
-      proxyPass = "http://localhost:5050";
-      proxyWebsockets = true;
-    };
-  };
+  #services.nginx.virtualHosts."pgadmin.piperswe.me" = {
+  #  locations."/" = {
+  #    proxyPass = "http://localhost:5050";
+  #    proxyWebsockets = true;
+  #  };
+  #};
 }
